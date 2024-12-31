@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+5dbf42e3d72241a35aa988d1810cad14 CMakeFiles/QuizMania_autogen
+5dbf42e3d72241a35aa988d1810cad14 CMakeFiles/QuizMania_autogen_timestamp_deps
+4e018e81117bcb75d394ebf409030c0f QuizMania_autogen/timestamp
