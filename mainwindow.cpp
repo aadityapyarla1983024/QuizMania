@@ -5,6 +5,8 @@
 #include <string>
 #include <QDebug>
 
+#include <SmtpMime>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -104,6 +106,7 @@ void MainWindow::on_username_textEdited()
 void MainWindow::on_nextButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+    sendEmailComfirmation();
 }
 
 void MainWindow::on_changeEmailButton_clicked()
@@ -115,5 +118,49 @@ void MainWindow::on_changeEmailButton_clicked()
     m_emailValid = false;
     emit noEmptyFieldCheck();
     ui->registerWidget_2->setWindowTitle("User Registeration - QuizMania");
+}
+
+void MainWindow::sendEmailComfirmation()
+{
+    MimeMessage message;
+
+    EmailAddress sender("aaditya.pyarla1@gmail.com", "QuizMania");
+    message.setSender(sender);
+
+    EmailAddress to("myfoodpod@gmail.com", "Customer");
+    message.addRecipient(to);
+
+    message.setSubject("Welcome - QuizMania");
+
+    // Now add some text to the email.
+    // First we create a MimeText object.
+
+    MimeText text;
+
+    text.setText("Hi,\n Your otp is 678 678.\n");
+
+    // Now add it to the mail
+
+    message.addPart(&text);
+
+    // Now we can send the mail
+    SmtpClient smtp("smtp.gmail.com", 465, SmtpClient::SslConnection);
+
+    smtp.connectToHost();
+    if (!smtp.waitForReadyConnected()) {
+        qDebug() << "Failed to connect to host!";
+    }
+
+    smtp.login("aaditya.pyarla1@gmail.com", "pqnv kovn blmv jawy");
+    if (!smtp.waitForAuthenticated()) {
+        qDebug() << "Failed to login!";
+    }
+
+    smtp.sendMail(message);
+    if (!smtp.waitForMailSent()) {
+        qDebug() << "Failed to send mail!";
+    }
+
+    smtp.quit();
 }
 

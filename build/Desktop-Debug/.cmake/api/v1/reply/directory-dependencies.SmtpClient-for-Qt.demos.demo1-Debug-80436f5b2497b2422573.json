@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "dependencies/SmtpClient-for-Qt/demos/demo1",
+		"source" : "dependencies/SmtpClient-for-Qt/demos/demo1"
+	}
+}

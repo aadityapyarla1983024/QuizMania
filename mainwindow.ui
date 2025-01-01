@@ -44,7 +44,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="registerWidget_1">
        <widget class="QFrame" name="registerFrame">

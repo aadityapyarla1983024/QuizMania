@@ -1,0 +1,71 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"dependencies/SmtpClient-for-Qt/src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "SmtpMime_autogen_timestamp_deps::@4424b1fdc35f3c581991"
+		}
+	],
+	"id" : "SmtpMime_autogen::@4424b1fdc35f3c581991",
+	"isGeneratorProvided" : true,
+	"name" : "SmtpMime_autogen",
+	"paths" : 
+	{
+		"build" : "dependencies/SmtpClient-for-Qt/src",
+		"source" : "dependencies/SmtpClient-for-Qt/src"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src/SmtpMime_autogen/timestamp.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

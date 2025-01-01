@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include <string>
 #include <QMainWindow>
+#include <SmtpMime>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -45,5 +46,6 @@ private:
     bool m_firstName = false;
     bool m_lastName = false;
     bool m_userName = false;
+    void sendEmailComfirmation();
 };
 #endif // MAINWINDOW_H

@@ -1,0 +1,24 @@
+{
+	"BUILD_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/ppp_autogen",
+	"CMAKE_BINARY_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania",
+	"CMAKE_SOURCE_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/ppp_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/pyarla/dev/cpp/projects/QuizMania/media/rb_7853.png",
+		"/home/pyarla/dev/cpp/projects/QuizMania/media/rb_21298.png"
+	],
+	"LOCK_FILE" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles/ppp_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles/ppp_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/pyarla/dev/cpp/projects/QuizMania/resources.qrc",
+	"VERBOSITY" : 0
+}

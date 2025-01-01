@@ -156,10 +156,12 @@ QuizMania: CMakeFiles/QuizMania.dir/mainwindow.cpp.o
 QuizMania: CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o
 QuizMania: CMakeFiles/QuizMania.dir/build.make
 QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
+QuizMania: dependencies/SmtpClient-for-Qt/src/libSmtpMime.so.2.0
 QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2
-QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 QuizMania: /usr/lib/x86_64-linux-gnu/libGLX.so
 QuizMania: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
+QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 QuizMania: CMakeFiles/QuizMania.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable QuizMania"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/QuizMania.dir/link.txt --verbose=$(VERBOSE)

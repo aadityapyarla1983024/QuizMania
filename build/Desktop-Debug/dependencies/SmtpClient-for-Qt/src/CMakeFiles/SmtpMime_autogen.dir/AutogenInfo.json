@@ -1,0 +1,282 @@
+{
+	"BUILD_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src/SmtpMime_autogen",
+	"CMAKE_BINARY_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/CMakeLists.txt",
+		"/usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania",
+	"DEP_FILE" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src/SmtpMime_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "SmtpMime_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/emailaddress.h",
+			"Mu",
+			"EWIEGA46WW/moc_emailaddress.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimeattachment.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimeattachment.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimebase64encoder.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimebase64encoder.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimebase64formatter.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimebase64formatter.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimebytearrayattachment.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimebytearrayattachment.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimecontentencoder.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimecontentencoder.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimecontentformatter.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimecontentformatter.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimefile.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimefile.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimehtml.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimehtml.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimeinlinefile.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimeinlinefile.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimemessage.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimemessage.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimemultipart.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimemultipart.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimepart.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimepart.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimeqpencoder.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimeqpencoder.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimeqpformatter.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimeqpformatter.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimetext.h",
+			"Mu",
+			"EWIEGA46WW/moc_mimetext.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/quotedprintable.h",
+			"Mu",
+			"EWIEGA46WW/moc_quotedprintable.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/smtpclient.h",
+			"Mu",
+			"EWIEGA46WW/moc_smtpclient.cpp",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/smtpmime_global.h",
+			"Mu",
+			"EWIEGA46WW/moc_smtpmime_global.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src/SmtpMime_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src/SmtpMime_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_NETWORK_LIB", "SmtpMime_EXPORTS" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src",
+		"/usr/include/x86_64-linux-gnu/qt6/QtCore",
+		"/usr/include/x86_64-linux-gnu/qt6",
+		"/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt6/QtNetwork",
+		"/usr/include/c++/13",
+		"/usr/include/x86_64-linux-gnu/c++/13",
+		"/usr/include/c++/13/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/13/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_GADGET_EXPORT",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/g++-13",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src/SmtpMime_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 4,
+	"SETTINGS_FILE" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/emailaddress.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimeattachment.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimebase64encoder.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimebase64formatter.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimebytearrayattachment.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimecontentencoder.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimecontentformatter.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimefile.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimehtml.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimeinlinefile.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimemessage.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimemultipart.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimepart.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimeqpencoder.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimeqpformatter.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/mimetext.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/quotedprintable.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/pyarla/dev/cpp/projects/QuizMania/dependencies/SmtpClient-for-Qt/src/smtpclient.cpp",
+			"Mu",
+			null
+		]
+	],
+	"VERBOSITY" : 0
+}

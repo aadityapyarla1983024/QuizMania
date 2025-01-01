@@ -1,0 +1,388 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-be716240b3268228de07.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"build" : "dependencies/SmtpClient-for-Qt",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-dependencies.SmtpClient-for-Qt-Debug-07a542d4c419009d0bc3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "dependencies/SmtpClient-for-Qt"
+				},
+				{
+					"build" : "dependencies/SmtpClient-for-Qt/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-dependencies.SmtpClient-for-Qt.src-Debug-2b17b4fca1fbd71fa03e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "dependencies/SmtpClient-for-Qt/src",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "dependencies/SmtpClient-for-Qt/test",
+					"jsonFile" : "directory-dependencies.SmtpClient-for-Qt.test-Debug-4948f01366e329c947e9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "dependencies/SmtpClient-for-Qt/test",
+					"targetIndexes" : 
+					[
+						18,
+						19,
+						20
+					]
+				},
+				{
+					"build" : "dependencies/SmtpClient-for-Qt/demos",
+					"childIndexes" : 
+					[
+						5,
+						6,
+						7,
+						8
+					],
+					"jsonFile" : "directory-dependencies.SmtpClient-for-Qt.demos-Debug-7fffd31be77efaff3d84.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "dependencies/SmtpClient-for-Qt/demos"
+				},
+				{
+					"build" : "dependencies/SmtpClient-for-Qt/demos/demo1",
+					"jsonFile" : "directory-dependencies.SmtpClient-for-Qt.demos.demo1-Debug-80436f5b2497b2422573.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 1,
+					"source" : "dependencies/SmtpClient-for-Qt/demos/demo1",
+					"targetIndexes" : 
+					[
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"build" : "dependencies/SmtpClient-for-Qt/demos/demo2",
+					"jsonFile" : "directory-dependencies.SmtpClient-for-Qt.demos.demo2-Debug-ca0a8b5892bb182fd1ab.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 1,
+					"source" : "dependencies/SmtpClient-for-Qt/demos/demo2",
+					"targetIndexes" : 
+					[
+						9,
+						10,
+						11
+					]
+				},
+				{
+					"build" : "dependencies/SmtpClient-for-Qt/demos/demo3",
+					"jsonFile" : "directory-dependencies.SmtpClient-for-Qt.demos.demo3-Debug-8c241be7c5dbf2a08ee2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 1,
+					"source" : "dependencies/SmtpClient-for-Qt/demos/demo3",
+					"targetIndexes" : 
+					[
+						12,
+						13,
+						14
+					]
+				},
+				{
+					"build" : "dependencies/SmtpClient-for-Qt/demos/demo4",
+					"jsonFile" : "directory-dependencies.SmtpClient-for-Qt.demos.demo4-Debug-6af98f03d87dc41d5c5d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 1,
+					"source" : "dependencies/SmtpClient-for-Qt/demos/demo4",
+					"targetIndexes" : 
+					[
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "QuizMania",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					],
+					"name" : "SmtpMime",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "QuizMania::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QuizMania-Debug-01837510b423976b4b53.json",
+					"name" : "QuizMania",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QuizMania_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QuizMania_autogen-Debug-bac1a79ee121a29c1912.json",
+					"name" : "QuizMania_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QuizMania_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QuizMania_autogen_timestamp_deps-Debug-b62ae751f4680d3a0342.json",
+					"name" : "QuizMania_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "SmtpMime::@4424b1fdc35f3c581991",
+					"jsonFile" : "target-SmtpMime-Debug-0c2ddb1d30d8754d084b.json",
+					"name" : "SmtpMime",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "SmtpMime_autogen::@4424b1fdc35f3c581991",
+					"jsonFile" : "target-SmtpMime_autogen-Debug-598018755b88f1019fa2.json",
+					"name" : "SmtpMime_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "SmtpMime_autogen_timestamp_deps::@4424b1fdc35f3c581991",
+					"jsonFile" : "target-SmtpMime_autogen_timestamp_deps-Debug-d74958a84a9ea6de3255.json",
+					"name" : "SmtpMime_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "demo1::@6a0ccbda61a3f6597e5e",
+					"jsonFile" : "target-demo1-Debug-3d3dbec4b217145cb2c1.json",
+					"name" : "demo1",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "demo1_autogen::@6a0ccbda61a3f6597e5e",
+					"jsonFile" : "target-demo1_autogen-Debug-08b1977d3333d5fc070d.json",
+					"name" : "demo1_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "demo1_autogen_timestamp_deps::@6a0ccbda61a3f6597e5e",
+					"jsonFile" : "target-demo1_autogen_timestamp_deps-Debug-0931b5edea49bc4d9ecb.json",
+					"name" : "demo1_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "demo2::@c92accd83e0f0b94e9ae",
+					"jsonFile" : "target-demo2-Debug-ea810310cabc7d6729aa.json",
+					"name" : "demo2",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "demo2_autogen::@c92accd83e0f0b94e9ae",
+					"jsonFile" : "target-demo2_autogen-Debug-4756ec9ab0259c17a099.json",
+					"name" : "demo2_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "demo2_autogen_timestamp_deps::@c92accd83e0f0b94e9ae",
+					"jsonFile" : "target-demo2_autogen_timestamp_deps-Debug-3d9927633faa5ce4f63f.json",
+					"name" : "demo2_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "demo3::@bbd6fb34ef8c9b2eab7a",
+					"jsonFile" : "target-demo3-Debug-f529e6a97a065408c5e3.json",
+					"name" : "demo3",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "demo3_autogen::@bbd6fb34ef8c9b2eab7a",
+					"jsonFile" : "target-demo3_autogen-Debug-1ed089769bbed0dcedd9.json",
+					"name" : "demo3_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "demo3_autogen_timestamp_deps::@bbd6fb34ef8c9b2eab7a",
+					"jsonFile" : "target-demo3_autogen_timestamp_deps-Debug-c4686bdbec610b99385f.json",
+					"name" : "demo3_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "demo4::@92d3cf0de63cc51cc249",
+					"jsonFile" : "target-demo4-Debug-8ae49bc0c97115f33788.json",
+					"name" : "demo4",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "demo4_autogen::@92d3cf0de63cc51cc249",
+					"jsonFile" : "target-demo4_autogen-Debug-fdb4563736ab543d7e52.json",
+					"name" : "demo4_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "demo4_autogen_timestamp_deps::@92d3cf0de63cc51cc249",
+					"jsonFile" : "target-demo4_autogen_timestamp_deps-Debug-92fb7345a6ac72c9fd4b.json",
+					"name" : "demo4_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "test::@a6bcc3b5f7c7263d97df",
+					"jsonFile" : "target-test-Debug-59623666a90af1b0931a.json",
+					"name" : "test",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "test_autogen::@a6bcc3b5f7c7263d97df",
+					"jsonFile" : "target-test_autogen-Debug-24a6aa3d0b9d0eef43c0.json",
+					"name" : "test_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "test_autogen_timestamp_deps::@a6bcc3b5f7c7263d97df",
+					"jsonFile" : "target-test_autogen_timestamp_deps-Debug-60abb5abb995868945cf.json",
+					"name" : "test_autogen_timestamp_deps",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug",
+		"source" : "/home/pyarla/dev/cpp/projects/QuizMania"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

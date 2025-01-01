@@ -52,10 +52,20 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/QuizMania")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/QuizMania" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/QuizMania")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/QuizMania"
+         OLD_RPATH "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src:"
+         NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/QuizMania")
     endif()
   endif()
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/cmake_install.cmake")
+
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
