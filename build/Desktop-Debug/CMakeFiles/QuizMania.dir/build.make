@@ -76,10 +76,18 @@ QuizMania_autogen/timestamp: CMakeFiles/QuizMania.dir/compiler_depend.ts
 	/usr/bin/cmake -E cmake_autogen /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles/QuizMania_autogen.dir/AutogenInfo.json Debug
 	/usr/bin/cmake -E touch /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/QuizMania_autogen/timestamp
 
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/resources.qrc
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: CMakeFiles/QuizMania_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/rb_7853.png
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/rb_21298.png
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /usr/lib/qt6/libexec/rcc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources.qrc"
+	/usr/bin/cmake -E cmake_autorcc /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles/QuizMania_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json Debug
+
 CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o: CMakeFiles/QuizMania.dir/flags.make
 CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o: QuizMania_autogen/mocs_compilation.cpp
 CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o: CMakeFiles/QuizMania.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o"
 	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o -MF CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o -c /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/QuizMania_autogen/mocs_compilation.cpp
 
 CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.i: cmake_force
@@ -93,7 +101,7 @@ CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.s: cmake_force
 CMakeFiles/QuizMania.dir/main.cpp.o: CMakeFiles/QuizMania.dir/flags.make
 CMakeFiles/QuizMania.dir/main.cpp.o: /home/pyarla/dev/cpp/projects/QuizMania/main.cpp
 CMakeFiles/QuizMania.dir/main.cpp.o: CMakeFiles/QuizMania.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QuizMania.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/QuizMania.dir/main.cpp.o"
 	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuizMania.dir/main.cpp.o -MF CMakeFiles/QuizMania.dir/main.cpp.o.d -o CMakeFiles/QuizMania.dir/main.cpp.o -c /home/pyarla/dev/cpp/projects/QuizMania/main.cpp
 
 CMakeFiles/QuizMania.dir/main.cpp.i: cmake_force
@@ -107,7 +115,7 @@ CMakeFiles/QuizMania.dir/main.cpp.s: cmake_force
 CMakeFiles/QuizMania.dir/mainwindow.cpp.o: CMakeFiles/QuizMania.dir/flags.make
 CMakeFiles/QuizMania.dir/mainwindow.cpp.o: /home/pyarla/dev/cpp/projects/QuizMania/mainwindow.cpp
 CMakeFiles/QuizMania.dir/mainwindow.cpp.o: CMakeFiles/QuizMania.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/QuizMania.dir/mainwindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/QuizMania.dir/mainwindow.cpp.o"
 	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuizMania.dir/mainwindow.cpp.o -MF CMakeFiles/QuizMania.dir/mainwindow.cpp.o.d -o CMakeFiles/QuizMania.dir/mainwindow.cpp.o -c /home/pyarla/dev/cpp/projects/QuizMania/mainwindow.cpp
 
 CMakeFiles/QuizMania.dir/mainwindow.cpp.i: cmake_force
@@ -118,11 +126,26 @@ CMakeFiles/QuizMania.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/QuizMania.dir/mainwindow.cpp.s"
 	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pyarla/dev/cpp/projects/QuizMania/mainwindow.cpp -o CMakeFiles/QuizMania.dir/mainwindow.cpp.s
 
+CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/QuizMania.dir/flags.make
+CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o: QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp
+CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o: CMakeFiles/QuizMania.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o -MF CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o.d -o CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o -c /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp
+
+CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.i"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp > CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.i
+
+CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.s"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp -o CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.s
+
 # Object files for target QuizMania
 QuizMania_OBJECTS = \
 "CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/QuizMania.dir/main.cpp.o" \
-"CMakeFiles/QuizMania.dir/mainwindow.cpp.o"
+"CMakeFiles/QuizMania.dir/mainwindow.cpp.o" \
+"CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o"
 
 # External object files for target QuizMania
 QuizMania_EXTERNAL_OBJECTS =
@@ -130,6 +153,7 @@ QuizMania_EXTERNAL_OBJECTS =
 QuizMania: CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o
 QuizMania: CMakeFiles/QuizMania.dir/main.cpp.o
 QuizMania: CMakeFiles/QuizMania.dir/mainwindow.cpp.o
+QuizMania: CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o
 QuizMania: CMakeFiles/QuizMania.dir/build.make
 QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2
@@ -137,7 +161,7 @@ QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 QuizMania: /usr/lib/x86_64-linux-gnu/libGLX.so
 QuizMania: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 QuizMania: CMakeFiles/QuizMania.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable QuizMania"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable QuizMania"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/QuizMania.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -148,6 +172,7 @@ CMakeFiles/QuizMania.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/QuizMania.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/QuizMania.dir/clean
 
+CMakeFiles/QuizMania.dir/depend: QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp
 CMakeFiles/QuizMania.dir/depend: QuizMania_autogen/timestamp
 	cd /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pyarla/dev/cpp/projects/QuizMania /home/pyarla/dev/cpp/projects/QuizMania /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles/QuizMania.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/QuizMania.dir/depend

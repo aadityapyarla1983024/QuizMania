@@ -200,6 +200,30 @@ QuizMania_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuizMania_autogen.dir/build.make CMakeFiles/QuizMania_autogen.dir/build
 .PHONY : QuizMania_autogen/fast
 
+QuizMania_autogen/EWIEGA46WW/qrc_resources.o: QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o
+.PHONY : QuizMania_autogen/EWIEGA46WW/qrc_resources.o
+
+# target to build an object file
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuizMania.dir/build.make CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o
+.PHONY : QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o
+
+QuizMania_autogen/EWIEGA46WW/qrc_resources.i: QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.i
+.PHONY : QuizMania_autogen/EWIEGA46WW/qrc_resources.i
+
+# target to preprocess a source file
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuizMania.dir/build.make CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.i
+.PHONY : QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.i
+
+QuizMania_autogen/EWIEGA46WW/qrc_resources.s: QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.s
+.PHONY : QuizMania_autogen/EWIEGA46WW/qrc_resources.s
+
+# target to generate assembly for a file
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/QuizMania.dir/build.make CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.s
+.PHONY : QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.s
+
 QuizMania_autogen/mocs_compilation.o: QuizMania_autogen/mocs_compilation.cpp.o
 .PHONY : QuizMania_autogen/mocs_compilation.o
 
@@ -287,6 +311,9 @@ help:
 	@echo "... QuizMania_autogen"
 	@echo "... QuizMania_autogen_timestamp_deps"
 	@echo "... QuizMania"
+	@echo "... QuizMania_autogen/EWIEGA46WW/qrc_resources.o"
+	@echo "... QuizMania_autogen/EWIEGA46WW/qrc_resources.i"
+	@echo "... QuizMania_autogen/EWIEGA46WW/qrc_resources.s"
 	@echo "... QuizMania_autogen/mocs_compilation.o"
 	@echo "... QuizMania_autogen/mocs_compilation.i"
 	@echo "... QuizMania_autogen/mocs_compilation.s"

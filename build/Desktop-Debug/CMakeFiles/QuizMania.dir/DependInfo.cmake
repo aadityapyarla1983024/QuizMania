@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "QuizMania_autogen/timestamp" "custom" "QuizMania_autogen/deps"
+  "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp" "CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o" "gcc" "CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp.o.d"
   "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/QuizMania_autogen/mocs_compilation.cpp" "CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/QuizMania.dir/QuizMania_autogen/mocs_compilation.cpp.o.d"
   "/home/pyarla/dev/cpp/projects/QuizMania/main.cpp" "CMakeFiles/QuizMania.dir/main.cpp.o" "gcc" "CMakeFiles/QuizMania.dir/main.cpp.o.d"
   "/home/pyarla/dev/cpp/projects/QuizMania/mainwindow.cpp" "CMakeFiles/QuizMania.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/QuizMania.dir/mainwindow.cpp.o.d"
