@@ -1,12 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <chrono>
 #include <regex>
 #include <string>
 #include <QDebug>
-
+#include <cstdlib>
+#include <ctime>
 #include <SmtpMime>
-
+#include <QString>
+#include <thread>
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,12 +17,14 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     connect(this, SIGNAL(noEmptyField()), this, SLOT(noEmptyFieldCheck()));
+    connect(this, SIGNAL(resendTimerFinished()), this, SLOT(on_resendTimerFinished_emmited()));
     connect(ui->email, SIGNAL(textEdited(QString)), this, SLOT(on_email_textEdited(QString)));
     connect(ui->firstName, SIGNAL(textEdited()), this, SLOT(on_firstName_textEdited()));
     connect(ui->lastName, SIGNAL(textEdited()), this, SLOT(on_lastName_textEdited()));
     connect(ui->username, SIGNAL(textEdited()), this, SLOT(on_username_textEdited()));
     connect(ui->nextButton, SIGNAL(clicked()), this, SLOT(on_nextButton_clicked()));
     connect(ui->changeEmailButton, SIGNAL(clicked()), this, SLOT(on_changeEmailButton_clicked()));
+    connect(ui->resendButton, SIGNAL(clicked()), this, SLOT(on_resendButton_clicked()));
 
 }
 
@@ -48,6 +53,9 @@ bool MainWindow::isEmailValid(const std::string& email)
     return regex_match(email, pattern);
 }
 
+void MainWindow::on_resendTimerFinished_emmited() {
+    ui->resendButton->setDisabled(false);
+}
 
 
 void MainWindow::on_email_textEdited(const QString &email)
@@ -89,10 +97,9 @@ void MainWindow::on_lastName_textEdited()
 }
 
 
-void MainWindow::on_username_textEdited()
-{
+void MainWindow::on_username_textEdited() {
     if (ui->username->text().isEmpty()) {
-        ui->usernameLabel->setText("⚠️ You have entered a invalid username.");
+        ui->usernameLabel->setText("⚠ You have entered a invalid username.");
         m_userName = false;
 
     } else {
@@ -106,13 +113,15 @@ void MainWindow::on_username_textEdited()
 void MainWindow::on_nextButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
-    sendEmailComfirmation();
+    m_email = ui->email->text();
+    sendEmailConfirmation();
+    resendTimer();
 }
 
-void MainWindow::on_changeEmailButton_clicked()
-{
+void MainWindow::on_changeEmailButton_clicked() {
     ui->stackedWidget->setCurrentIndex(0);
     ui->emailConfirmCode->clear();
+
     ui->email->clear();
     ui->email->setFocus();
     m_emailValid = false;
@@ -120,30 +129,150 @@ void MainWindow::on_changeEmailButton_clicked()
     ui->registerWidget_2->setWindowTitle("User Registeration - QuizMania");
 }
 
-void MainWindow::sendEmailComfirmation()
-{
+std::string MainWindow::oneTimePasswordGenerator() {
+    std::srand(std::time(0));
+    int otptemp = std::rand() % 1000000;
+    otp = std::to_string(otptemp);
+    while (otp.length() < 6) {
+        otp = "0" + otp;
+    }
+    return otp;
+}
+
+
+void MainWindow::resendTimer() {
+    // If there's a previously running timer, stop it
+    if (timer) {
+        timer->stop();        // Stop the old timer
+        disconnect(timer, &QTimer::timeout, this, nullptr); // Disconnect previous connections
+        delete timer;         // Delete the old timer
+        timer = nullptr;    // Delete the old timer
+    }
+
+    ui->resendButton->setDisabled(true);
+
+    // Initialize seconds counter for this new session // You can choose a different starting value if needed
+
+    // Display the initial time (120 seconds = 2:00)
+
+    int seconds = 120;
+    ui->resendTimer->setText(QString::number(seconds / 60) + ":" + QString::number(seconds % 60));
+
+    // Create a new QTimer instance
+    timer = new QTimer(this);
+
+    // Disable the resend button and reset the timer label
+    ui->resendButton->setDisabled(true);
+    ui->resendTimer->setText("");
+
+    // Connect the timeout signal to the lambda function
+    connect(timer, &QTimer::timeout, this, [this, seconds] () mutable {
+        seconds--;  // Decrease the counter by 1
+        ui->resendTimer->setText(QString::number(seconds / 60) + ":" + QString::number(seconds % 60));
+
+        if (seconds <= 0) {
+            ui->resendButton->setDisabled(false);  // Enable the resend button
+            ui->resendTimer->setText("");  // Clear the timer display
+            timer->stop();  // Stop the timer
+            delete timer;  // Free the memory for the timer
+            timer = nullptr;  // Set the timer pointer to null
+        }
+    });
+
+    // Start the timer with a 1-second interval (1000 ms)
+    timer->start(1000);
+
+}
+
+void MainWindow::sendEmailConfirmation() {
     MimeMessage message;
 
     EmailAddress sender("aaditya.pyarla1@gmail.com", "QuizMania");
     message.setSender(sender);
 
-    EmailAddress to("myfoodpod@gmail.com", "Customer");
+    EmailAddress to(m_email, ui->firstName->text() + " " + ui->lastName->text());
     message.addRecipient(to);
 
-    message.setSubject("Welcome - QuizMania");
+    message.setSubject("Verify Your Account - QuizMania");
+    otp = oneTimePasswordGenerator();
+    std::string emailBody =
+        "<html>"
+        "<head>"
+        "<style>"
+        "body {"
+        "    font-family: Arial, sans-serif;"
+        "    margin: 0;"
+        "    padding: 0;"
+        "    background-color: #f4f4f9;"
+        "}"
+        ".email-container {"
+        "    width: 100%;"
+        "    max-width: 600px;"
+        "    margin: 0 auto;"
+        "    background-color: #ffffff;"
+        "    padding: 20px;"
+        "    border-radius: 8px;"
+        "    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
+        "}"
+        ".email-header {"
+        "    text-align: center;"
+        "    margin-bottom: 20px;"
+        "}"
+        ".email-header img {"
+        "    max-width: 150px;"
+        "}"
+        ".email-content {"
+        "    font-size: 16px;"
+        "    line-height: 1.5;"
+        "    color: #333333;"
+        "}"
+        ".otp-code {"
+        "    display: inline-block;"
+        "    padding: 10px 20px;"
+        "    background-color: #4CAF50;"
+        "    color: #ffffff;"
+        "    font-size: 20px;"
+        "    font-weight: bold;"
+        "    border-radius: 4px;"
+        "    margin: 20px 0;"
+        "}"
+        ".footer {"
+        "    text-align: center;"
+        "    font-size: 12px;"
+        "    color: #888888;"
+        "    margin-top: 30px;"
+        "}"
+        ".footer a {"
+        "    color: #4CAF50;"
+        "    text-decoration: none;"
+        "}"
+        "</style>"
+        "</head>"
+        "<body>"
+        "<div class='email-container'>"
+        "<div class='email-header'>"
+        "<img src='https://img.freepik.com/premium-photo/secure-email-concept-with-padlock-icon_989822-6557.jpg?semt=ais_hybrid' alt='Platform Logo' />"
+        "</div>"
+        "<div class='email-content'>"
+        "<p>Hi there,</p>"
+        "<p>Thank you for signing up with QuizMania. To complete your registration, please use the One-Time Password (OTP) below:</p>"
+        "<div class='otp-code'>" + otp + "</div>"
+                "<p>This OTP is valid for the next 10 minutes. Please enter it on the Desktop App to proceed.</p>"
+                "<p>If you didn't request this, please ignore this email.</p>"
+                "<p>Thank you, and we look forward to helping you and your child with an enriching educational experience!</p>"
+                "</div>"
+                "<div class='footer'>"
+                "<p>&copy; 2025 QuizMania. All rights reserved.</p>"
+                "<p>If you have any questions, visit our <a href='https://github.com/aadityapyarla1983024'>Support Center</a>.</p>"
+                "</div>"
+                "</div>"
+                "</body>"
+                "</html>";
+    QString emailContent = QString::fromUtf8(emailBody.c_str());
+    MimeHtml html;
+    html.setHtml(emailContent);
+    message.addPart(&html);
 
-    // Now add some text to the email.
-    // First we create a MimeText object.
-
-    MimeText text;
-
-    text.setText("Hi,\n Your otp is 678 678.\n");
-
-    // Now add it to the mail
-
-    message.addPart(&text);
-
-    // Now we can send the mail
     SmtpClient smtp("smtp.gmail.com", 465, SmtpClient::SslConnection);
 
     smtp.connectToHost();
@@ -162,5 +291,14 @@ void MainWindow::sendEmailComfirmation()
     }
 
     smtp.quit();
+}
+
+
+
+
+void MainWindow::on_resendButton_clicked()
+{
+    sendEmailConfirmation();
+    resendTimer();
 }
 

@@ -36,6 +36,9 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_5">
     <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_9"/>
+    </item>
+    <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="minimumSize">
        <size>
@@ -349,7 +352,7 @@ QLineEdit {
         font-size: 11pt;
         border-radius: 10px;
         margin-top: 30px;
-    color: rgb(226, 226, 226);
+    		color: rgb(226, 226, 226);
 }
 
 QLineEdit:hover {
@@ -368,17 +371,37 @@ QPushButton {
 QPushButton:hover {
         background-color: rgb(76, 120, 73);
         border-radius: 10px;
+}
 
+#resendButton {
+	background-color: transparent;
+	border: transparent;
+	font: 500 10pt;
+	padding: 0px 15px 0px 0px;
+}
+
+#resendButton:disabled {
+	color: rgb(147, 147, 147)
+}
+
+#resendButton:hover {
+	text-decoration: underline;
 }
 
 QLabel {
         padding: 10px 40px 10px 10px;
-    color: white;
+   		color: white;
+		font: 600 11pt &quot;Fira Code SemiBold&quot;;
 }
 
 QPushButton:disabled {
         background-color: rgb(168, 197, 163);
 }
+
+#resendtimer {
+	 color: rgb(147, 147, 147)
+}
+
 
 </string>
         </property>
@@ -393,22 +416,6 @@ QPushButton:disabled {
              <property name="leftMargin">
               <number>0</number>
              </property>
-             <item row="2" column="0">
-              <widget class="QLineEdit" name="emailConfirmCode">
-               <property name="inputMask">
-                <string/>
-               </property>
-               <property name="maxLength">
-                <number>6</number>
-               </property>
-               <property name="placeholderText">
-                <string>6-Digit Code</string>
-               </property>
-               <property name="clearButtonEnabled">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
              <item row="1" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
               <widget class="QLabel" name="emailConfirmHeading">
                <property name="styleSheet">
@@ -436,7 +443,7 @@ font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
                </property>
               </spacer>
              </item>
-             <item row="4" column="0">
+             <item row="7" column="0">
               <spacer name="verticalSpacer_5">
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
@@ -449,18 +456,127 @@ font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
                </property>
               </spacer>
              </item>
+             <item row="4" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_8">
+               <item>
+                <widget class="QLabel" name="resendTimer">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="resendButton">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="text">
+                  <string>Resend</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
              <item row="3" column="0">
-              <widget class="QPushButton" name="changeEmailButton">
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
+              <widget class="QLineEdit" name="emailConfirmCode">
+               <property name="inputMask">
+                <string/>
                </property>
-               <property name="text">
-                <string>Change Email</string>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="placeholderText">
+                <string>6-Digit Code</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
+             <item row="6" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
+               <item>
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="changeEmailButton">
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="text">
+                  <string>Change Email</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
              <item row="5" column="0">
+              <spacer name="verticalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item row="8" column="0">
               <layout class="QVBoxLayout" name="verticalLayout_2"/>
+             </item>
+             <item row="2" column="0">
+              <spacer name="verticalSpacer_6">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
              </item>
             </layout>
            </item>

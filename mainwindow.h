@@ -3,6 +3,7 @@
 #include <string>
 #include <QMainWindow>
 #include <SmtpMime>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -18,10 +19,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public slots:
-
 signals:
     void noEmptyField(void);
+    void resendTimerFinished(void);
 
 private slots:
     void on_email_textEdited(const QString &arg1);
@@ -38,14 +38,22 @@ private slots:
 
     void on_changeEmailButton_clicked();
 
+    void on_resendButton_clicked();
+
+    void on_resendTimerFinished_emmited();
+
 private:
     Ui::MainWindow *ui;
-
+    QTimer* timer = nullptr;
     bool isEmailValid(const std::string& email);
+    QString m_email;
     bool m_emailValid = false;
     bool m_firstName = false;
     bool m_lastName = false;
     bool m_userName = false;
-    void sendEmailComfirmation();
+    std::string otp;
+    void sendEmailConfirmation();
+    void resendTimer();
+    std::string oneTimePasswordGenerator();
 };
 #endif // MAINWINDOW_H
