@@ -26,7 +26,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_MainWindow_t {
-    uint offsetsAndSizes[28];
+    uint offsetsAndSizes[30];
     char stringdata0[11];
     char stringdata1[13];
     char stringdata2[1];
@@ -41,6 +41,7 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata11[29];
     char stringdata12[24];
     char stringdata13[31];
+    char stringdata14[31];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -59,7 +60,8 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(158, 21),  // "on_nextButton_clicked"
         QT_MOC_LITERAL(180, 28),  // "on_changeEmailButton_clicked"
         QT_MOC_LITERAL(209, 23),  // "on_resendButton_clicked"
-        QT_MOC_LITERAL(233, 30)   // "on_resendTimerFinished_emmited"
+        QT_MOC_LITERAL(233, 30),  // "on_resendTimerFinished_emmited"
+        QT_MOC_LITERAL(264, 30)   // "on_emailConfirmCode_textEdited"
     },
     "MainWindow",
     "noEmptyField",
@@ -74,7 +76,8 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "on_nextButton_clicked",
     "on_changeEmailButton_clicked",
     "on_resendButton_clicked",
-    "on_resendTimerFinished_emmited"
+    "on_resendTimerFinished_emmited",
+    "on_emailConfirmCode_textEdited"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -85,7 +88,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -93,19 +96,20 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   80,    2, 0x06,    1 /* Public */,
-       3,    0,   81,    2, 0x06,    2 /* Public */,
+       1,    0,   86,    2, 0x06,    1 /* Public */,
+       3,    0,   87,    2, 0x06,    2 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    1,   82,    2, 0x08,    3 /* Private */,
-       6,    0,   85,    2, 0x08,    5 /* Private */,
-       7,    0,   86,    2, 0x08,    6 /* Private */,
-       8,    0,   87,    2, 0x08,    7 /* Private */,
-       9,    0,   88,    2, 0x08,    8 /* Private */,
-      10,    0,   89,    2, 0x08,    9 /* Private */,
-      11,    0,   90,    2, 0x08,   10 /* Private */,
-      12,    0,   91,    2, 0x08,   11 /* Private */,
-      13,    0,   92,    2, 0x08,   12 /* Private */,
+       4,    1,   88,    2, 0x08,    3 /* Private */,
+       6,    0,   91,    2, 0x08,    5 /* Private */,
+       7,    0,   92,    2, 0x08,    6 /* Private */,
+       8,    0,   93,    2, 0x08,    7 /* Private */,
+       9,    0,   94,    2, 0x08,    8 /* Private */,
+      10,    0,   95,    2, 0x08,    9 /* Private */,
+      11,    0,   96,    2, 0x08,   10 /* Private */,
+      12,    0,   97,    2, 0x08,   11 /* Private */,
+      13,    0,   98,    2, 0x08,   12 /* Private */,
+      14,    1,   99,    2, 0x08,   13 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -121,6 +125,7 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    5,
 
        0        // eod
 };
@@ -156,7 +161,10 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'on_resendButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_resendTimerFinished_emmited'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_emailConfirmCode_textEdited'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
     >,
     nullptr
 } };
@@ -178,6 +186,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 8: _t->on_changeEmailButton_clicked(); break;
         case 9: _t->on_resendButton_clicked(); break;
         case 10: _t->on_resendTimerFinished_emmited(); break;
+        case 11: _t->on_emailConfirmCode_textEdited((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -218,13 +227,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

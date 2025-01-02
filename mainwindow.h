@@ -42,11 +42,15 @@ private slots:
 
     void on_resendTimerFinished_emmited();
 
+    void on_emailConfirmCode_textEdited(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     QTimer* timer = nullptr;
     bool isEmailValid(const std::string& email);
     QString m_email;
+    bool m_emailSent = false;
+    void resendTimerStop();
     bool m_emailValid = false;
     bool m_firstName = false;
     bool m_lastName = false;

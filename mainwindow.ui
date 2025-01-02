@@ -112,7 +112,7 @@ QPushButton:hover {
 
 QLabel {
         padding: 10px 40px 10px 10px;
-    color: white;
+    		color: white;
 }
 
 QPushButton:disabled {
@@ -359,6 +359,11 @@ QLineEdit:hover {
         border-color: #ffffff;
 }
 
+#otpValidationMessage{
+		font: 100 10pt;
+color: rgb(226, 226, 226);
+}
+
 QPushButton {
         padding: 10px 25px 10px 25px;
         border: 2px solid gray;
@@ -416,20 +421,6 @@ QPushButton:disabled {
              <property name="leftMargin">
               <number>0</number>
              </property>
-             <item row="1" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-              <widget class="QLabel" name="emailConfirmHeading">
-               <property name="styleSheet">
-                <string notr="true">color: #ffffff;
-font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
-               </property>
-               <property name="text">
-                <string>Please check your inbox for confirmation !</string>
-               </property>
-               <property name="wordWrap">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
              <item row="0" column="0">
               <spacer name="verticalSpacer_3">
                <property name="orientation">
@@ -443,20 +434,7 @@ font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
                </property>
               </spacer>
              </item>
-             <item row="7" column="0">
-              <spacer name="verticalSpacer_5">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item row="4" column="0">
+             <item row="5" column="0">
               <layout class="QHBoxLayout" name="horizontalLayout_8">
                <item>
                 <widget class="QLabel" name="resendTimer">
@@ -493,23 +471,50 @@ font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
                </item>
               </layout>
              </item>
-             <item row="3" column="0">
-              <widget class="QLineEdit" name="emailConfirmCode">
-               <property name="inputMask">
-                <string/>
+             <item row="6" column="0">
+              <spacer name="verticalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
                </property>
-               <property name="maxLength">
-                <number>6</number>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
                </property>
-               <property name="placeholderText">
-                <string>6-Digit Code</string>
+              </spacer>
+             </item>
+             <item row="1" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+              <widget class="QLabel" name="emailConfirmHeading">
+               <property name="styleSheet">
+                <string notr="true">color: #ffffff;
+font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
                </property>
-               <property name="clearButtonEnabled">
+               <property name="text">
+                <string>Please check your inbox for confirmation !</string>
+               </property>
+               <property name="wordWrap">
                 <bool>true</bool>
                </property>
               </widget>
              </item>
-             <item row="6" column="0">
+             <item row="9" column="0">
+              <layout class="QVBoxLayout" name="verticalLayout_2"/>
+             </item>
+             <item row="8" column="0">
+              <spacer name="verticalSpacer_5">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item row="7" column="0">
               <layout class="QHBoxLayout" name="horizontalLayout_10">
                <item>
                 <spacer name="horizontalSpacer_3">
@@ -549,22 +554,6 @@ font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
                </item>
               </layout>
              </item>
-             <item row="5" column="0">
-              <spacer name="verticalSpacer_4">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item row="8" column="0">
-              <layout class="QVBoxLayout" name="verticalLayout_2"/>
-             </item>
              <item row="2" column="0">
               <spacer name="verticalSpacer_6">
                <property name="orientation">
@@ -577,6 +566,29 @@ font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
                 </size>
                </property>
               </spacer>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLineEdit" name="emailConfirmCode">
+               <property name="inputMask">
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="placeholderText">
+                <string>6-Digit Code</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="otpValidationMessage">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>

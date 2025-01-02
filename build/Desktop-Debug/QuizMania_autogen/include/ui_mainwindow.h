@@ -62,21 +62,22 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QHBoxLayout *horizontalLayout_7;
     QGridLayout *gridLayout_2;
-    QLabel *emailConfirmHeading;
     QSpacerItem *verticalSpacer_3;
-    QSpacerItem *verticalSpacer_5;
     QHBoxLayout *horizontalLayout_8;
     QLabel *resendTimer;
     QSpacerItem *horizontalSpacer_5;
     QPushButton *resendButton;
-    QLineEdit *emailConfirmCode;
+    QSpacerItem *verticalSpacer_4;
+    QLabel *emailConfirmHeading;
+    QVBoxLayout *verticalLayout_2;
+    QSpacerItem *verticalSpacer_5;
     QHBoxLayout *horizontalLayout_10;
     QSpacerItem *horizontalSpacer_3;
     QPushButton *changeEmailButton;
     QSpacerItem *horizontalSpacer_4;
-    QSpacerItem *verticalSpacer_4;
-    QVBoxLayout *verticalLayout_2;
     QSpacerItem *verticalSpacer_6;
+    QLineEdit *emailConfirmCode;
+    QLabel *otpValidationMessage;
     QLabel *emailConfirmIllustration;
 
     void setupUi(QMainWindow *MainWindow)
@@ -157,12 +158,12 @@ public:
 "\n"
 "QLabel {\n"
 "        padding: 10px 40px 10px 10px;\n"
-"    color: white;\n"
+"    		color: white;\n"
 "}\n"
 "\n"
 "QPushButton:disabled {\n"
-"        background-c"
-                        "olor: rgb(168, 197, 163);\n"
+"        background"
+                        "-color: rgb(168, 197, 163);\n"
 "}\n"
 "\n"
 ""));
@@ -304,6 +305,11 @@ public:
 "        border-color: #ffffff;\n"
 "}\n"
 "\n"
+"#otpValidationMessage{\n"
+"		font: 100 10pt;\n"
+"color: rgb(226, 226, 226);\n"
+"}\n"
+"\n"
 "QPushButton {\n"
 "        padding: 10px 25px 10px 25px;\n"
 "        border: 2px solid gray;\n"
@@ -319,13 +325,13 @@ public:
 "}\n"
 "\n"
 "#resendButton {\n"
-"	background-color: transparent;\n"
+"	background-color: transpar"
+                        "ent;\n"
 "	border: transparent;\n"
 "	font: 500 10pt;\n"
 "	padding: 0px 15px 0px 0px;\n"
 "}\n"
-""
-                        "\n"
+"\n"
 "#resendButton:disabled {\n"
 "	color: rgb(147, 147, 147)\n"
 "}\n"
@@ -358,21 +364,9 @@ public:
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, -1, -1, -1);
-        emailConfirmHeading = new QLabel(emailFrame);
-        emailConfirmHeading->setObjectName("emailConfirmHeading");
-        emailConfirmHeading->setStyleSheet(QString::fromUtf8("color: #ffffff;\n"
-"font: 600 italic 16pt \"Cascadia Mono\";"));
-        emailConfirmHeading->setWordWrap(true);
-
-        gridLayout_2->addWidget(emailConfirmHeading, 1, 0, 1, 1, Qt::AlignHCenter|Qt::AlignVCenter);
-
         verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_2->addItem(verticalSpacer_3, 0, 0, 1, 1);
-
-        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_2->addItem(verticalSpacer_5, 7, 0, 1, 1);
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName("horizontalLayout_8");
@@ -393,14 +387,28 @@ public:
         horizontalLayout_8->addWidget(resendButton);
 
 
-        gridLayout_2->addLayout(horizontalLayout_8, 4, 0, 1, 1);
+        gridLayout_2->addLayout(horizontalLayout_8, 5, 0, 1, 1);
 
-        emailConfirmCode = new QLineEdit(emailFrame);
-        emailConfirmCode->setObjectName("emailConfirmCode");
-        emailConfirmCode->setMaxLength(6);
-        emailConfirmCode->setClearButtonEnabled(true);
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_2->addWidget(emailConfirmCode, 3, 0, 1, 1);
+        gridLayout_2->addItem(verticalSpacer_4, 6, 0, 1, 1);
+
+        emailConfirmHeading = new QLabel(emailFrame);
+        emailConfirmHeading->setObjectName("emailConfirmHeading");
+        emailConfirmHeading->setStyleSheet(QString::fromUtf8("color: #ffffff;\n"
+"font: 600 italic 16pt \"Cascadia Mono\";"));
+        emailConfirmHeading->setWordWrap(true);
+
+        gridLayout_2->addWidget(emailConfirmHeading, 1, 0, 1, 1, Qt::AlignHCenter|Qt::AlignVCenter);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName("verticalLayout_2");
+
+        gridLayout_2->addLayout(verticalLayout_2, 9, 0, 1, 1);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_2->addItem(verticalSpacer_5, 8, 0, 1, 1);
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName("horizontalLayout_10");
@@ -419,20 +427,23 @@ public:
         horizontalLayout_10->addItem(horizontalSpacer_4);
 
 
-        gridLayout_2->addLayout(horizontalLayout_10, 6, 0, 1, 1);
-
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_2->addItem(verticalSpacer_4, 5, 0, 1, 1);
-
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName("verticalLayout_2");
-
-        gridLayout_2->addLayout(verticalLayout_2, 8, 0, 1, 1);
+        gridLayout_2->addLayout(horizontalLayout_10, 7, 0, 1, 1);
 
         verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_2->addItem(verticalSpacer_6, 2, 0, 1, 1);
+
+        emailConfirmCode = new QLineEdit(emailFrame);
+        emailConfirmCode->setObjectName("emailConfirmCode");
+        emailConfirmCode->setMaxLength(6);
+        emailConfirmCode->setClearButtonEnabled(true);
+
+        gridLayout_2->addWidget(emailConfirmCode, 3, 0, 1, 1);
+
+        otpValidationMessage = new QLabel(emailFrame);
+        otpValidationMessage->setObjectName("otpValidationMessage");
+
+        gridLayout_2->addWidget(otpValidationMessage, 4, 0, 1, 1);
 
 
         horizontalLayout_7->addLayout(gridLayout_2);
@@ -483,12 +494,13 @@ public:
         registerHeading->setText(QCoreApplication::translate("MainWindow", "Join our Community !", nullptr));
         emailLabel->setText(QCoreApplication::translate("MainWindow", "\342\232\240\357\270\217 Please enter a valid email.", nullptr));
         registerIllustration->setText(QString());
-        emailConfirmHeading->setText(QCoreApplication::translate("MainWindow", "Please check your inbox for confirmation !", nullptr));
         resendTimer->setText(QString());
         resendButton->setText(QCoreApplication::translate("MainWindow", "Resend", nullptr));
+        emailConfirmHeading->setText(QCoreApplication::translate("MainWindow", "Please check your inbox for confirmation !", nullptr));
+        changeEmailButton->setText(QCoreApplication::translate("MainWindow", "Change Email", nullptr));
         emailConfirmCode->setInputMask(QString());
         emailConfirmCode->setPlaceholderText(QCoreApplication::translate("MainWindow", "6-Digit Code", nullptr));
-        changeEmailButton->setText(QCoreApplication::translate("MainWindow", "Change Email", nullptr));
+        otpValidationMessage->setText(QString());
         emailConfirmIllustration->setText(QString());
     } // retranslateUi
 

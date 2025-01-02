@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->nextButton, SIGNAL(clicked()), this, SLOT(on_nextButton_clicked()));
     connect(ui->changeEmailButton, SIGNAL(clicked()), this, SLOT(on_changeEmailButton_clicked()));
     connect(ui->resendButton, SIGNAL(clicked()), this, SLOT(on_resendButton_clicked()));
+    connect(ui->emailConfirmCode, SIGNAL(textEdited(QString)), this, SLOT(on_emailConfirmCode_textEdited(QString)));
 
 }
 
@@ -143,48 +144,44 @@ std::string MainWindow::oneTimePasswordGenerator() {
 void MainWindow::resendTimer() {
     // If there's a previously running timer, stop it
     if (timer) {
-        timer->stop();        // Stop the old timer
-        disconnect(timer, &QTimer::timeout, this, nullptr); // Disconnect previous connections
-        delete timer;         // Delete the old timer
-        timer = nullptr;    // Delete the old timer
+        resendTimerStop();
     }
 
     ui->resendButton->setDisabled(true);
 
-    // Initialize seconds counter for this new session // You can choose a different starting value if needed
-
-    // Display the initial time (120 seconds = 2:00)
-
+    // Initialize seconds counter for this new session
     int seconds = 120;
     ui->resendTimer->setText(QString::number(seconds / 60) + ":" + QString::number(seconds % 60));
 
-    // Create a new QTimer instance
-    timer = new QTimer(this);
+    // Create a new QTimer instance only if there's no active timer
+    if (timer == nullptr) {
+        timer = new QTimer(this);
 
-    // Disable the resend button and reset the timer label
-    ui->resendButton->setDisabled(true);
-    ui->resendTimer->setText("");
+        // Connect the timeout signal to the lambda function
+        connect(timer, &QTimer::timeout, this, [this, seconds] () mutable {
+            seconds--;  // Decrease the counter by 1
+            ui->resendTimer->setText(QString::number(seconds / 60) + ":" + QString::number(seconds % 60));
 
-    // Connect the timeout signal to the lambda function
-    connect(timer, &QTimer::timeout, this, [this, seconds] () mutable {
-        seconds--;  // Decrease the counter by 1
-        ui->resendTimer->setText(QString::number(seconds / 60) + ":" + QString::number(seconds % 60));
+            if (seconds <= 0) {
+                ui->resendButton->setDisabled(false);  // Enable the resend button
+                ui->resendTimer->setText("");  // Clear the timer display
+                timer->stop();  // Stop the timer
+                delete timer;  // Free the memory for the timer
+                timer = nullptr;  // Set the timer pointer to null
+            }
+        });
 
-        if (seconds <= 0) {
-            ui->resendButton->setDisabled(false);  // Enable the resend button
-            ui->resendTimer->setText("");  // Clear the timer display
-            timer->stop();  // Stop the timer
-            delete timer;  // Free the memory for the timer
-            timer = nullptr;  // Set the timer pointer to null
-        }
-    });
-
-    // Start the timer with a 1-second interval (1000 ms)
-    timer->start(1000);
-
+        // Start the timer with a 1-second interval (1000 ms)
+        timer->start(1000);
+    }
 }
 
+
 void MainWindow::sendEmailConfirmation() {
+    if(m_emailSent) {
+        return;
+    }
+
     MimeMessage message;
 
     EmailAddress sender("aaditya.pyarla1@gmail.com", "QuizMania");
@@ -291,14 +288,37 @@ void MainWindow::sendEmailConfirmation() {
     }
 
     smtp.quit();
+    m_emailSent = true;
+    return;
 }
 
-
-
+void MainWindow::resendTimerStop() {
+    if (timer != nullptr) {
+        qDebug() << "Stopping and deleting timer";
+        timer->stop();
+        disconnect(timer, &QTimer::timeout, this, nullptr); // Disconnect previous connections
+        delete timer;
+        timer = nullptr;
+    } else {
+        qDebug() << "Timer was already null";
+    }
+}
 
 void MainWindow::on_resendButton_clicked()
 {
     sendEmailConfirmation();
     resendTimer();
+}
+
+void MainWindow::on_emailConfirmCode_textEdited(const QString& otpinput)
+{
+    if (otpinput.toStdString() != otp) {
+        ui->otpValidationMessage->setText("Please enter a valid OTP");
+
+    } else {
+        ui->otpValidationMessage->setText("Done");
+        resendTimerStop();
+        ui->resendTimer->setText("");
+    }
 }
 
