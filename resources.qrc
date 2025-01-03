@@ -2,5 +2,6 @@
     <qresource prefix="/UserValidation">
         <file>media/rb_21298.png</file>
         <file>media/rb_7853.png</file>
+        <file>media/rb_4685.png</file>
     </qresource>
 </RCC>

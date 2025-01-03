@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <chrono>
 #include <regex>
 #include <string>
 #include <QDebug>
@@ -8,7 +7,6 @@
 #include <ctime>
 #include <SmtpMime>
 #include <QString>
-#include <thread>
 #include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -26,7 +24,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->changeEmailButton, SIGNAL(clicked()), this, SLOT(on_changeEmailButton_clicked()));
     connect(ui->resendButton, SIGNAL(clicked()), this, SLOT(on_resendButton_clicked()));
     connect(ui->emailConfirmCode, SIGNAL(textEdited(QString)), this, SLOT(on_emailConfirmCode_textEdited(QString)));
-
+    connect(ui->passwordInput1, SIGNAL(textEdited(QString)), this, SLOT(on_passwordInput1_textEdited(QString)));
+    connect(ui->passwordInput2, SIGNAL(textEdited(QString)), this, SLOT(on_passwordInput2_textEdited(QString)));
 }
 
 MainWindow::~MainWindow()
@@ -66,7 +65,7 @@ void MainWindow::on_email_textEdited(const QString &email)
         m_emailValid = true;
 
     } else {
-        ui->emailLabel->setText("⚠️ Please enter a valid email.");
+        ui->emailLabel->setText("⛔️ Please enter a valid email.");
         m_emailValid = false;
     }
     emit noEmptyFieldCheck();
@@ -100,7 +99,7 @@ void MainWindow::on_lastName_textEdited()
 
 void MainWindow::on_username_textEdited() {
     if (ui->username->text().isEmpty()) {
-        ui->usernameLabel->setText("⚠ You have entered a invalid username.");
+        ui->usernameLabel->setText("⛔️ You have entered a invalid username.");
         m_userName = false;
 
     } else {
@@ -115,6 +114,7 @@ void MainWindow::on_nextButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
     m_email = ui->email->text();
+    ui->recieveEmailLabel->setText("Email: " + m_email);
     sendEmailConfirmation();
     resendTimer();
 }
@@ -151,8 +151,7 @@ void MainWindow::resendTimer() {
 
     // Initialize seconds counter for this new session
     int seconds = 120;
-    ui->resendTimer->setText(QString::number(seconds / 60) + ":" + QString::number(seconds % 60));
-
+    ui->resendTimer->setText(QString::number(seconds / 60) + ":" + QString::number(seconds % 60, 10).rightJustified(2, '0'));
     // Create a new QTimer instance only if there's no active timer
     if (timer == nullptr) {
         timer = new QTimer(this);
@@ -160,7 +159,9 @@ void MainWindow::resendTimer() {
         // Connect the timeout signal to the lambda function
         connect(timer, &QTimer::timeout, this, [this, seconds] () mutable {
             seconds--;  // Decrease the counter by 1
-            ui->resendTimer->setText(QString::number(seconds / 60) + ":" + QString::number(seconds % 60));
+            int minutes = seconds / 60;
+            int remainingSeconds = seconds % 60;
+            ui->resendTimer->setText(QString::number(minutes) + ":" + QString::number(remainingSeconds, 10).rightJustified(2, '0'));
 
             if (seconds <= 0) {
                 ui->resendButton->setDisabled(false);  // Enable the resend button
@@ -313,12 +314,77 @@ void MainWindow::on_resendButton_clicked()
 void MainWindow::on_emailConfirmCode_textEdited(const QString& otpinput)
 {
     if (otpinput.toStdString() != otp) {
-        ui->otpValidationMessage->setText("Please enter a valid OTP");
+        ui->otpValidationMessage->setText("⛔️ Please enter a valid OTP");
 
     } else {
-        ui->otpValidationMessage->setText("Done");
+        ui->stackedWidget->setCurrentIndex(2);
         resendTimerStop();
         ui->resendTimer->setText("");
+    }
+}
+
+void MainWindow::strongPasswordValidator(std::string& input)
+{
+    int n = input.length();
+
+    // Checking lower alphabet in string
+    // bool hasLower = false, hasUpper = false, hasDigit = false, specialChar = false;
+    std::string normalChars = "abcdefghijklmnopqrstu"
+                         "vwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ";
+
+    for (int i = 0; i < n; i++) {
+        if (islower(input[i]))
+            passwordValidationResult[0] = true;
+        if (isupper(input[i]))
+            passwordValidationResult[1] = true;
+        if (isdigit(input[i]))
+            passwordValidationResult[2] = true;
+
+        size_t special = input.find_first_not_of(normalChars);
+        if (special != std::string::npos)
+            passwordValidationResult[3] = true;
+    }
+    return;
+}
+
+
+void MainWindow::on_passwordInput1_textEdited(const QString &password)
+{
+    std::string passwordInput1 = password.toStdString();
+    strongPasswordValidator(passwordInput1);
+
+    if(passwordValidationResult[1]) {
+        ui->uppercaseLabel->setText("✅ At least 1 uppercase");
+    } else {
+        ui->uppercaseLabel->setText("⛔️ At least 1 uppercase");
+    }
+    if(passwordValidationResult[2]) {
+        ui->oneNumberLabel->setText("✅ At least 1 number");
+    } else {
+        ui->oneNumberLabel->setText("⛔️ At least 1 number");
+    }
+    if(passwordValidationResult[3]) {
+        ui->specialCharacterLabel->setText("✅ At least 1 special character (@, #, $, &, !, %)");
+    } else {
+        ui->specialCharacterLabel->setText("⛔️ At least 1 special character (@, #, $, &, !, %)");
+    }
+}
+
+
+void MainWindow::on_passwordInput2_textEdited(const QString &password2)
+{
+    bool passwordMatch = false;
+    if(password2.toStdString() == ui->passwordInput1->text().toStdString()) {
+        ui->passwordMatchMessage->setText("✅ Your password match each other");
+        passwordMatch = true;
+    } else {
+        passwordMatch = false;
+        ui->passwordMatchMessage->setText("⛔ Your password don't match each other");
+    }
+    if(passwordValidationResult[0] && passwordValidationResult[1] && passwordValidationResult[2] && passwordValidationResult[3] && passwordMatch) {
+        ui->confirmPasswordButton->setDisabled(false);
+    } else {
+        ui->confirmPasswordButton->setDisabled(true);
     }
 }
 

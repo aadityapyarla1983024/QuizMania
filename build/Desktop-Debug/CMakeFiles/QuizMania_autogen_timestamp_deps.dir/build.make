@@ -66,12 +66,12 @@ include CMakeFiles/QuizMania_autogen_timestamp_deps.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/QuizMania_autogen_timestamp_deps.dir/progress.make
 
+CMakeFiles/QuizMania_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 CMakeFiles/QuizMania_autogen_timestamp_deps: dependencies/SmtpClient-for-Qt/src/libSmtpMime.so.2.0
 CMakeFiles/QuizMania_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
 CMakeFiles/QuizMania_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
 CMakeFiles/QuizMania_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 CMakeFiles/QuizMania_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
-CMakeFiles/QuizMania_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 
 QuizMania_autogen_timestamp_deps: CMakeFiles/QuizMania_autogen_timestamp_deps
 QuizMania_autogen_timestamp_deps: CMakeFiles/QuizMania_autogen_timestamp_deps.dir/build.make

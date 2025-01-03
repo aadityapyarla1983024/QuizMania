@@ -44,11 +44,17 @@ private slots:
 
     void on_emailConfirmCode_textEdited(const QString &arg1);
 
+    void on_passwordInput1_textEdited(const QString &arg1);
+
+    void on_passwordInput2_textEdited(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     QTimer* timer = nullptr;
     bool isEmailValid(const std::string& email);
+    void strongPasswordValidator(std::string& input);
     QString m_email;
+    std::array<bool, 5> passwordValidationResult = { false, false, false, false, false };
     bool m_emailSent = false;
     void resendTimerStop();
     bool m_emailValid = false;

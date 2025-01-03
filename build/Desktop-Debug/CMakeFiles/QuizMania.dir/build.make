@@ -78,6 +78,7 @@ QuizMania_autogen/timestamp: CMakeFiles/QuizMania.dir/compiler_depend.ts
 
 QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/resources.qrc
 QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: CMakeFiles/QuizMania_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/rb_4685.png
 QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/rb_7853.png
 QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/rb_21298.png
 QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /usr/lib/qt6/libexec/rcc
