@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
@@ -36,6 +37,26 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QHBoxLayout *horizontalLayout_9;
     QStackedWidget *stackedWidget;
+    QWidget *registerWidget_4;
+    QFrame *loginFrame_1;
+    QHBoxLayout *horizontalLayout_15;
+    QHBoxLayout *horizontalLayout_16;
+    QGridLayout *gridLayout_4;
+    QHBoxLayout *horizontalLayout_18;
+    QLabel *registerHeading_2;
+    QLabel *loginMessageLabel;
+    QHBoxLayout *horizontalLayout_17;
+    QSpacerItem *horizontalSpacer_8;
+    QPushButton *loginButton;
+    QSpacerItem *horizontalSpacer_9;
+    QPushButton *registerLink;
+    QSpacerItem *verticalSpacer_13;
+    QVBoxLayout *verticalLayout_4;
+    QSpacerItem *verticalSpacer_12;
+    QLineEdit *loginUsernameEmailInput;
+    QLineEdit *loginPasswordInput;
+    QSpacerItem *verticalSpacer_10;
+    QLabel *registerIllustration_2;
     QWidget *registerWidget_1;
     QFrame *registerFrame;
     QHBoxLayout *horizontalLayout_2;
@@ -97,8 +118,12 @@ public:
     QSpacerItem *verticalSpacer_7;
     QVBoxLayout *verticalLayout_3;
     QSpacerItem *verticalSpacer_9;
+    QHBoxLayout *horizontalLayout_19;
     QLineEdit *passwordInput1;
+    QPushButton *eyeButton1;
+    QHBoxLayout *horizontalLayout_20;
     QLineEdit *passwordInput2;
+    QPushButton *eyeButton2;
     QLabel *passwordMatchMessage;
     QLabel *specialCharacterLabel;
     QSpacerItem *verticalSpacer_8;
@@ -132,12 +157,186 @@ public:
         horizontalLayout_5->setObjectName("horizontalLayout_5");
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName("horizontalLayout_9");
-
-        horizontalLayout_5->addLayout(horizontalLayout_9);
-
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
         stackedWidget->setMinimumSize(QSize(1201, 650));
+        registerWidget_4 = new QWidget();
+        registerWidget_4->setObjectName("registerWidget_4");
+        loginFrame_1 = new QFrame(registerWidget_4);
+        loginFrame_1->setObjectName("loginFrame_1");
+        loginFrame_1->setEnabled(true);
+        loginFrame_1->setGeometry(QRect(120, 50, 1201, 650));
+        loginFrame_1->setMinimumSize(QSize(1201, 650));
+        loginFrame_1->setMaximumSize(QSize(1147, 578));
+        loginFrame_1->setStyleSheet(QString::fromUtf8("QFrame{\n"
+"        background-color: rgb(42, 45, 55);\n"
+"        padding: 20px 20px 20px 40px;\n"
+"        border-radius: 50px;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"        border-bottom: 2px solid gray;\n"
+"        background-color: rgb(42, 45, 55);\n"
+"        padding: 10px 20px 10px 20px;\n"
+"        font-size: 11pt;\n"
+"        border-radius: 10px;\n"
+"        margin-top: 30px;\n"
+"    color: rgb(226, 226, 226);\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"        border-color: #ffffff;\n"
+"}\n"
+"\n"
+"#registerLink {\n"
+"\n"
+"	background-color: transparent;\n"
+"	border: transparent;\n"
+"	font: 500 10pt;\n"
+"	padding: 0px 15px 0px 0px;\n"
+"	margin-top: 10px\n"
+"\n"
+"}\n"
+"\n"
+"#registerLink:hover {\n"
+"	text-decoration: underline;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"        padding: 10px 25px 10px 25px;\n"
+"        border: 2px solid gray;\n"
+"        border-radius: 10px;\n"
+"        background-color: rgb(125, 197, 120);\n"
+"        color:#ffffff;\n"
+"        font: 600 italic 14pt \"Cascadia Mono\";\n"
+"\n"
+""
+                        "}\n"
+"QPushButton:hover {\n"
+"        background-color: rgb(76, 120, 73);\n"
+"        border-radius: 10px;\n"
+"\n"
+"}\n"
+"\n"
+"QLabel {\n"
+"        padding: 10px 40px 10px 10px;\n"
+"    		color: white;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"        background-color: rgb(168, 197, 163);\n"
+"}\n"
+"\n"
+""));
+        loginFrame_1->setFrameShape(QFrame::NoFrame);
+        horizontalLayout_15 = new QHBoxLayout(loginFrame_1);
+        horizontalLayout_15->setObjectName("horizontalLayout_15");
+        horizontalLayout_15->setSizeConstraint(QLayout::SetMinimumSize);
+        horizontalLayout_16 = new QHBoxLayout();
+        horizontalLayout_16->setObjectName("horizontalLayout_16");
+        gridLayout_4 = new QGridLayout();
+        gridLayout_4->setObjectName("gridLayout_4");
+        gridLayout_4->setContentsMargins(0, -1, -1, -1);
+        horizontalLayout_18 = new QHBoxLayout();
+        horizontalLayout_18->setObjectName("horizontalLayout_18");
+
+        gridLayout_4->addLayout(horizontalLayout_18, 12, 0, 1, 1);
+
+        registerHeading_2 = new QLabel(loginFrame_1);
+        registerHeading_2->setObjectName("registerHeading_2");
+        registerHeading_2->setStyleSheet(QString::fromUtf8("color: #ffffff;\n"
+"font: 600 italic 16pt \"Cascadia Mono\";"));
+
+        gridLayout_4->addWidget(registerHeading_2, 1, 0, 1, 1, Qt::AlignHCenter|Qt::AlignVCenter);
+
+        loginMessageLabel = new QLabel(loginFrame_1);
+        loginMessageLabel->setObjectName("loginMessageLabel");
+        loginMessageLabel->setEnabled(true);
+        loginMessageLabel->setAutoFillBackground(false);
+        loginMessageLabel->setTextFormat(Qt::PlainText);
+
+        gridLayout_4->addWidget(loginMessageLabel, 3, 0, 1, 1);
+
+        horizontalLayout_17 = new QHBoxLayout();
+        horizontalLayout_17->setObjectName("horizontalLayout_17");
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_17->addItem(horizontalSpacer_8);
+
+        loginButton = new QPushButton(loginFrame_1);
+        loginButton->setObjectName("loginButton");
+        loginButton->setEnabled(false);
+        loginButton->setCursor(QCursor(Qt::PointingHandCursor));
+        loginButton->setAutoFillBackground(false);
+
+        horizontalLayout_17->addWidget(loginButton);
+
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_17->addItem(horizontalSpacer_9);
+
+
+        gridLayout_4->addLayout(horizontalLayout_17, 10, 0, 1, 1);
+
+        registerLink = new QPushButton(loginFrame_1);
+        registerLink->setObjectName("registerLink");
+        registerLink->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout_4->addWidget(registerLink, 11, 0, 1, 1);
+
+        verticalSpacer_13 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_4->addItem(verticalSpacer_13, 0, 0, 1, 1);
+
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setObjectName("verticalLayout_4");
+        verticalSpacer_12 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_4->addItem(verticalSpacer_12);
+
+        loginUsernameEmailInput = new QLineEdit(loginFrame_1);
+        loginUsernameEmailInput->setObjectName("loginUsernameEmailInput");
+
+        verticalLayout_4->addWidget(loginUsernameEmailInput);
+
+        loginPasswordInput = new QLineEdit(loginFrame_1);
+        loginPasswordInput->setObjectName("loginPasswordInput");
+        loginPasswordInput->setStyleSheet(QString::fromUtf8("margin-top: 10px"));
+        loginPasswordInput->setEchoMode(QLineEdit::Password);
+
+        verticalLayout_4->addWidget(loginPasswordInput);
+
+
+        gridLayout_4->addLayout(verticalLayout_4, 2, 0, 1, 1);
+
+        verticalSpacer_10 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_4->addItem(verticalSpacer_10, 4, 0, 1, 1);
+
+
+        horizontalLayout_16->addLayout(gridLayout_4);
+
+        registerIllustration_2 = new QLabel(loginFrame_1);
+        registerIllustration_2->setObjectName("registerIllustration_2");
+        registerIllustration_2->setMinimumSize(QSize(580, 500));
+        registerIllustration_2->setStyleSheet(QString::fromUtf8("background-color: #ffffff;\n"
+"margin-left: 50px;\n"
+""));
+        registerIllustration_2->setPixmap(QPixmap(QString::fromUtf8(":/UserValidation/media/rb_7853.png")));
+        registerIllustration_2->setScaledContents(true);
+        registerIllustration_2->setWordWrap(false);
+
+        horizontalLayout_16->addWidget(registerIllustration_2);
+
+        horizontalLayout_16->setStretch(0, 2);
+        horizontalLayout_16->setStretch(1, 3);
+
+        horizontalLayout_15->addLayout(horizontalLayout_16);
+
+        stackedWidget->addWidget(registerWidget_4);
         registerWidget_1 = new QWidget();
         registerWidget_1->setObjectName("registerWidget_1");
         registerFrame = new QFrame(registerWidget_1);
@@ -572,6 +771,17 @@ public:
                         "-color: rgb(168, 197, 163);\n"
 "}\n"
 "\n"
+"#eyeButton1, #eyeButton2 {\n"
+"		background-color: transparent;\n"
+"		padding: 0;\n"
+"		border: 0px;\n"
+"}\n"
+"\n"
+"#eyeButton2 {\n"
+"		margin-left: 20px;\n"
+"		padding-right: 10px\n"
+"}\n"
+"\n"
 ""));
         passwordFrame_3->setFrameShape(QFrame::NoFrame);
         horizontalLayout_11 = new QHBoxLayout(passwordFrame_3);
@@ -642,15 +852,49 @@ public:
 
         verticalLayout_3->addItem(verticalSpacer_9);
 
+        horizontalLayout_19 = new QHBoxLayout();
+        horizontalLayout_19->setObjectName("horizontalLayout_19");
         passwordInput1 = new QLineEdit(passwordFrame_3);
         passwordInput1->setObjectName("passwordInput1");
+        passwordInput1->setEchoMode(QLineEdit::Password);
 
-        verticalLayout_3->addWidget(passwordInput1);
+        horizontalLayout_19->addWidget(passwordInput1);
 
+        eyeButton1 = new QPushButton(passwordFrame_3);
+        eyeButton1->setObjectName("eyeButton1");
+        eyeButton1->setCursor(QCursor(Qt::PointingHandCursor));
+        QIcon icon;
+        QString iconThemeName = QString::fromUtf8("mail-forward");
+        if (QIcon::hasThemeIcon(iconThemeName)) {
+            icon = QIcon::fromTheme(iconThemeName);
+        } else {
+            icon.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
+        }
+        eyeButton1->setIcon(icon);
+
+        horizontalLayout_19->addWidget(eyeButton1);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_19);
+
+        horizontalLayout_20 = new QHBoxLayout();
+        horizontalLayout_20->setObjectName("horizontalLayout_20");
         passwordInput2 = new QLineEdit(passwordFrame_3);
         passwordInput2->setObjectName("passwordInput2");
+        passwordInput2->setEchoMode(QLineEdit::Password);
 
-        verticalLayout_3->addWidget(passwordInput2);
+        horizontalLayout_20->addWidget(passwordInput2);
+
+        eyeButton2 = new QPushButton(passwordFrame_3);
+        eyeButton2->setObjectName("eyeButton2");
+        eyeButton2->setCursor(QCursor(Qt::PointingHandCursor));
+        QIcon icon1(QIcon::fromTheme(QString::fromUtf8("mail-forward")));
+        eyeButton2->setIcon(icon1);
+
+        horizontalLayout_20->addWidget(eyeButton2);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_20);
 
         passwordMatchMessage = new QLabel(passwordFrame_3);
         passwordMatchMessage->setObjectName("passwordMatchMessage");
@@ -689,14 +933,17 @@ public:
 
         stackedWidget->addWidget(registerWidget_3);
 
-        horizontalLayout_5->addWidget(stackedWidget);
+        horizontalLayout_9->addWidget(stackedWidget);
+
+
+        horizontalLayout_5->addLayout(horizontalLayout_9);
 
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
         QObject::connect(confirmPasswordButton, &QPushButton::clicked, MainWindow, qOverload<>(&QMainWindow::close));
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -708,6 +955,13 @@ public:
         actionewkljfnwef->setText(QCoreApplication::translate("MainWindow", "ewkljfnwef''", nullptr));
         actionwlkemfm->setText(QCoreApplication::translate("MainWindow", "wlkemfm", nullptr));
         action_kmf->setText(QCoreApplication::translate("MainWindow", ";kmf", nullptr));
+        registerHeading_2->setText(QCoreApplication::translate("MainWindow", "Login your account", nullptr));
+        loginMessageLabel->setText(QString());
+        loginButton->setText(QCoreApplication::translate("MainWindow", "Login \342\236\241\357\270\217", nullptr));
+        registerLink->setText(QCoreApplication::translate("MainWindow", "Don't have an account?", nullptr));
+        loginUsernameEmailInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Username / Email", nullptr));
+        loginPasswordInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Password", nullptr));
+        registerIllustration_2->setText(QString());
         registerHeading->setText(QCoreApplication::translate("MainWindow", "Join our Community !", nullptr));
         firstName->setPlaceholderText(QCoreApplication::translate("MainWindow", "First Name", nullptr));
         lastName->setPlaceholderText(QCoreApplication::translate("MainWindow", "Last Name", nullptr));
@@ -733,7 +987,9 @@ public:
         uppercaseLabel->setText(QString());
         confirmPasswordButton->setText(QCoreApplication::translate("MainWindow", "Confirm", nullptr));
         passwordInput1->setPlaceholderText(QCoreApplication::translate("MainWindow", "Password", nullptr));
+        eyeButton1->setText(QCoreApplication::translate("MainWindow", "\360\237\221\201", nullptr));
         passwordInput2->setPlaceholderText(QCoreApplication::translate("MainWindow", "Re-enter Password", nullptr));
+        eyeButton2->setText(QCoreApplication::translate("MainWindow", "\360\237\221\201", nullptr));
         passwordMatchMessage->setText(QString());
         specialCharacterLabel->setText(QString());
         oneNumberLabel->setText(QString());

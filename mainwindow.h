@@ -48,6 +48,10 @@ private slots:
 
     void on_passwordInput2_textEdited(const QString &arg1);
 
+    void on_eyeButton1_clicked();
+
+    void on_eyeButton2_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTimer* timer = nullptr;

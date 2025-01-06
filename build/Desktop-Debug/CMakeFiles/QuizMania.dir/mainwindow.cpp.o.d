@@ -391,6 +391,8 @@ CMakeFiles/QuizMania.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/QAction \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/QIcon \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qicon.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h \
@@ -467,4 +469,5 @@ CMakeFiles/QuizMania.dir/mainwindow.cpp.o: \
  /usr/include/c++/13/bits/regex_executor.h \
  /usr/include/c++/13/bits/regex_executor.tcc \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QDebug \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit

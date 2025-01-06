@@ -8,6 +8,7 @@
 #include <SmtpMime>
 #include <QString>
 #include <QTimer>
+#include <QLineEdit>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->emailConfirmCode, SIGNAL(textEdited(QString)), this, SLOT(on_emailConfirmCode_textEdited(QString)));
     connect(ui->passwordInput1, SIGNAL(textEdited(QString)), this, SLOT(on_passwordInput1_textEdited(QString)));
     connect(ui->passwordInput2, SIGNAL(textEdited(QString)), this, SLOT(on_passwordInput2_textEdited(QString)));
+    // connect(ui->eyeButton1, &QPushButton::clicked, this, &MainWindow::on_eyeButton1_clicked);
+    // connect(ui->eyeButton2, &QPushButton::clicked, this, &MainWindow::on_eyeButton2_clicked);
 }
 
 MainWindow::~MainWindow()
@@ -112,7 +115,7 @@ void MainWindow::on_username_textEdited() {
 
 void MainWindow::on_nextButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(2);
     m_email = ui->email->text();
     ui->recieveEmailLabel->setText("Email: " + m_email);
     sendEmailConfirmation();
@@ -120,7 +123,8 @@ void MainWindow::on_nextButton_clicked()
 }
 
 void MainWindow::on_changeEmailButton_clicked() {
-    ui->stackedWidget->setCurrentIndex(0);
+    m_emailSent = false;
+    ui->stackedWidget->setCurrentIndex(1);
     ui->emailConfirmCode->clear();
 
     ui->email->clear();
@@ -317,7 +321,7 @@ void MainWindow::on_emailConfirmCode_textEdited(const QString& otpinput)
         ui->otpValidationMessage->setText("⛔️ Please enter a valid OTP");
 
     } else {
-        ui->stackedWidget->setCurrentIndex(2);
+        ui->stackedWidget->setCurrentIndex(3);
         resendTimerStop();
         ui->resendTimer->setText("");
     }
@@ -385,6 +389,28 @@ void MainWindow::on_passwordInput2_textEdited(const QString &password2)
         ui->confirmPasswordButton->setDisabled(false);
     } else {
         ui->confirmPasswordButton->setDisabled(true);
+    }
+}
+
+
+
+
+void MainWindow::on_eyeButton1_clicked()
+{
+    if(ui->passwordInput1->echoMode() == QLineEdit::Password) {
+        ui->passwordInput1->setEchoMode(QLineEdit::Normal);
+    } else {
+        ui->passwordInput1->setEchoMode(QLineEdit::Password);
+    }
+}
+
+
+void MainWindow::on_eyeButton2_clicked()
+{
+    if(ui->passwordInput2->echoMode() == QLineEdit::Normal) {
+        ui->passwordInput2->setEchoMode(QLineEdit::Password);
+    } else {
+        ui->passwordInput2->setEchoMode(QLineEdit::Normal);
     }
 }
 
