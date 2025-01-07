@@ -66,12 +66,12 @@ include dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_time
 # Include the progress variables for this target.
 include dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps.dir/progress.make
 
-dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
+dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps: dependencies/SmtpClient-for-Qt/src/libSmtpMime.so.2.0
 dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
+dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2
-dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
 
 demo2_autogen_timestamp_deps: dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps
 demo2_autogen_timestamp_deps: dependencies/SmtpClient-for-Qt/demos/demo2/CMakeFiles/demo2_autogen_timestamp_deps.dir/build.make

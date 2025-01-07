@@ -9,7 +9,8 @@
 #include <QString>
 #include <QTimer>
 #include <QLineEdit>
-
+#include <QSqlDatabase>
+#include <QSqlQuery>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -27,8 +28,27 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->emailConfirmCode, SIGNAL(textEdited(QString)), this, SLOT(on_emailConfirmCode_textEdited(QString)));
     connect(ui->passwordInput1, SIGNAL(textEdited(QString)), this, SLOT(on_passwordInput1_textEdited(QString)));
     connect(ui->passwordInput2, SIGNAL(textEdited(QString)), this, SLOT(on_passwordInput2_textEdited(QString)));
-    // connect(ui->eyeButton1, &QPushButton::clicked, this, &MainWindow::on_eyeButton1_clicked);
-    // connect(ui->eyeButton2, &QPushButton::clicked, this, &MainWindow::on_eyeButton2_clicked);
+    db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("127.0.0.1");
+    db.setDatabaseName("QuizMania");
+    db.setPort(33061);
+    db.setUserName("root");
+    db.setPassword("24bcs003");
+    if (db.open()) {
+        qDebug() << "Database connected successfully!";
+    } else {
+        qDebug() << "Database connection failed!";
+    }
+    QSqlQuery query;
+    if (!query.exec("SELECT * FROM Users")) {
+        qDebug() << "Query failed: ";
+    }
+
+    while (query.next()) {
+        QString data = query.value(1).toString();  // Assuming the first column is a string
+        qDebug() << data;
+    }
+    qDebug() << QSqlDatabase::drivers();
 }
 
 MainWindow::~MainWindow()
@@ -412,5 +432,17 @@ void MainWindow::on_eyeButton2_clicked()
     } else {
         ui->passwordInput2->setEchoMode(QLineEdit::Normal);
     }
+}
+
+
+void MainWindow::on_registerLink_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_loginLink_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
 

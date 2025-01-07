@@ -78,9 +78,10 @@ QuizMania_autogen/timestamp: CMakeFiles/QuizMania.dir/compiler_depend.ts
 
 QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/resources.qrc
 QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: CMakeFiles/QuizMania_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json
-QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/rb_4685.png
-QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/rb_7853.png
-QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/rb_21298.png
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/illustrations/rb_4685.png
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/illustrations/rb_7853.png
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/illustrations/rb_21298.png
+QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /home/pyarla/dev/cpp/projects/QuizMania/media/icons/eyeButtonIconpng.png
 QuizMania_autogen/EWIEGA46WW/qrc_resources.cpp: /usr/lib/qt6/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources.qrc"
 	/usr/bin/cmake -E cmake_autorcc /home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles/QuizMania_autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json Debug
@@ -158,6 +159,7 @@ QuizMania: CMakeFiles/QuizMania.dir/QuizMania_autogen/EWIEGA46WW/qrc_resources.c
 QuizMania: CMakeFiles/QuizMania.dir/build.make
 QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
 QuizMania: dependencies/SmtpClient-for-Qt/src/libSmtpMime.so.2.0
+QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.4.2
 QuizMania: /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2
 QuizMania: /usr/lib/x86_64-linux-gnu/libGLX.so
 QuizMania: /usr/lib/x86_64-linux-gnu/libOpenGL.so

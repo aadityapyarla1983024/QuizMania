@@ -325,7 +325,7 @@ public:
         registerIllustration_2->setStyleSheet(QString::fromUtf8("background-color: #ffffff;\n"
 "margin-left: 50px;\n"
 ""));
-        registerIllustration_2->setPixmap(QPixmap(QString::fromUtf8(":/UserValidation/media/rb_7853.png")));
+        registerIllustration_2->setPixmap(QPixmap(QString::fromUtf8(":/UserValidation/media/illustrations/rb_7853.png")));
         registerIllustration_2->setScaledContents(true);
         registerIllustration_2->setWordWrap(false);
 
@@ -512,7 +512,7 @@ public:
         registerIllustration->setStyleSheet(QString::fromUtf8("background-color: #ffffff;\n"
 "margin-left: 50px;\n"
 ""));
-        registerIllustration->setPixmap(QPixmap(QString::fromUtf8(":/UserValidation/media/rb_7853.png")));
+        registerIllustration->setPixmap(QPixmap(QString::fromUtf8(":/UserValidation/media/illustrations/rb_7853.png")));
         registerIllustration->setScaledContents(true);
         registerIllustration->setWordWrap(false);
 
@@ -706,7 +706,7 @@ public:
         emailConfirmIllustration->setStyleSheet(QString::fromUtf8("background-color: #ffffff;\n"
 "margin-left: 50px;\n"
 ""));
-        emailConfirmIllustration->setPixmap(QPixmap(QString::fromUtf8(":/UserValidation/media/rb_21298.png")));
+        emailConfirmIllustration->setPixmap(QPixmap(QString::fromUtf8(":/UserValidation/media/illustrations/rb_21298.png")));
         emailConfirmIllustration->setScaledContents(true);
         emailConfirmIllustration->setWordWrap(false);
 
@@ -776,12 +776,6 @@ public:
 "		padding: 0;\n"
 "		border: 0px;\n"
 "}\n"
-"\n"
-"#eyeButton2 {\n"
-"		margin-left: 20px;\n"
-"		padding-right: 10px\n"
-"}\n"
-"\n"
 ""));
         passwordFrame_3->setFrameShape(QFrame::NoFrame);
         horizontalLayout_11 = new QHBoxLayout(passwordFrame_3);
@@ -795,7 +789,7 @@ public:
         ConfirmPasswordIllustration->setStyleSheet(QString::fromUtf8("background-color: #ffffff;\n"
 "margin-right: 40px;\n"
 ""));
-        ConfirmPasswordIllustration->setPixmap(QPixmap(QString::fromUtf8(":/UserValidation/media/rb_4685.png")));
+        ConfirmPasswordIllustration->setPixmap(QPixmap(QString::fromUtf8(":/UserValidation/media/illustrations/rb_4685.png")));
         ConfirmPasswordIllustration->setScaledContents(true);
         ConfirmPasswordIllustration->setWordWrap(false);
 
@@ -863,14 +857,11 @@ public:
         eyeButton1 = new QPushButton(passwordFrame_3);
         eyeButton1->setObjectName("eyeButton1");
         eyeButton1->setCursor(QCursor(Qt::PointingHandCursor));
+        eyeButton1->setFocusPolicy(Qt::ClickFocus);
         QIcon icon;
-        QString iconThemeName = QString::fromUtf8("mail-forward");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
-        }
+        icon.addFile(QString::fromUtf8(":/UserValidation/media/icons/eyeButtonIconpng.png"), QSize(), QIcon::Normal, QIcon::Off);
         eyeButton1->setIcon(icon);
+        eyeButton1->setIconSize(QSize(42, 21));
 
         horizontalLayout_19->addWidget(eyeButton1);
 
@@ -888,8 +879,9 @@ public:
         eyeButton2 = new QPushButton(passwordFrame_3);
         eyeButton2->setObjectName("eyeButton2");
         eyeButton2->setCursor(QCursor(Qt::PointingHandCursor));
-        QIcon icon1(QIcon::fromTheme(QString::fromUtf8("mail-forward")));
-        eyeButton2->setIcon(icon1);
+        eyeButton2->setFocusPolicy(Qt::ClickFocus);
+        eyeButton2->setIcon(icon);
+        eyeButton2->setIconSize(QSize(42, 21));
 
         horizontalLayout_20->addWidget(eyeButton2);
 
@@ -943,7 +935,7 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(confirmPasswordButton, &QPushButton::clicked, MainWindow, qOverload<>(&QMainWindow::close));
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -987,9 +979,9 @@ public:
         uppercaseLabel->setText(QString());
         confirmPasswordButton->setText(QCoreApplication::translate("MainWindow", "Confirm", nullptr));
         passwordInput1->setPlaceholderText(QCoreApplication::translate("MainWindow", "Password", nullptr));
-        eyeButton1->setText(QCoreApplication::translate("MainWindow", "\360\237\221\201", nullptr));
+        eyeButton1->setText(QString());
         passwordInput2->setPlaceholderText(QCoreApplication::translate("MainWindow", "Re-enter Password", nullptr));
-        eyeButton2->setText(QCoreApplication::translate("MainWindow", "\360\237\221\201", nullptr));
+        eyeButton2->setText(QString());
         passwordMatchMessage->setText(QString());
         specialCharacterLabel->setText(QString());
         oneNumberLabel->setText(QString());

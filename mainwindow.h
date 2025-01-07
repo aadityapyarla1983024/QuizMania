@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <SmtpMime>
 #include <QTimer>
+#include <QSqlDatabase>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -52,6 +53,10 @@ private slots:
 
     void on_eyeButton2_clicked();
 
+    void on_registerLink_clicked();
+
+    void on_loginLink_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTimer* timer = nullptr;
@@ -69,5 +74,6 @@ private:
     void sendEmailConfirmation();
     void resendTimer();
     std::string oneTimePasswordGenerator();
+    QSqlDatabase db;
 };
 #endif // MAINWINDOW_H

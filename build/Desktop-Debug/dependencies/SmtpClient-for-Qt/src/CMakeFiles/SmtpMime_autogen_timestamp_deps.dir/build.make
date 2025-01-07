@@ -66,9 +66,9 @@ include dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen_timestamp
 # Include the progress variables for this target.
 include dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen_timestamp_deps.dir/progress.make
 
-dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
-dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2
+dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
+dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
 
 SmtpMime_autogen_timestamp_deps: dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen_timestamp_deps
 SmtpMime_autogen_timestamp_deps: dependencies/SmtpClient-for-Qt/src/CMakeFiles/SmtpMime_autogen_timestamp_deps.dir/build.make

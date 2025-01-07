@@ -46,7 +46,7 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="registerWidget_4">
          <widget class="QFrame" name="loginFrame_1">
@@ -319,7 +319,7 @@ margin-left: 50px;
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="resources.qrc">:/UserValidation/media/rb_7853.png</pixmap>
+                <pixmap resource="resources.qrc">:/UserValidation/media/illustrations/rb_7853.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -610,7 +610,7 @@ margin-left: 50px;
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="resources.qrc">:/UserValidation/media/rb_7853.png</pixmap>
+                <pixmap resource="resources.qrc">:/UserValidation/media/illustrations/rb_7853.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -928,7 +928,7 @@ margin-left: 50px;
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="resources.qrc">:/UserValidation/media/rb_21298.png</pixmap>
+                <pixmap resource="resources.qrc">:/UserValidation/media/illustrations/rb_21298.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -1018,12 +1018,6 @@ QPushButton:disabled {
 		padding: 0;
 		border: 0px;
 }
-
-#eyeButton2 {
-		margin-left: 20px;
-		padding-right: 10px
-}
-
 </string>
           </property>
           <property name="frameShape">
@@ -1052,7 +1046,7 @@ margin-right: 40px;
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="resources.qrc">:/UserValidation/media/rb_4685.png</pixmap>
+                <pixmap resource="resources.qrc">:/UserValidation/media/illustrations/rb_4685.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -1183,12 +1177,21 @@ font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
                      </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::ClickFocus</enum>
+                     </property>
                      <property name="text">
-                      <string>👁</string>
+                      <string/>
                      </property>
                      <property name="icon">
-                      <iconset theme="mail-forward">
-                       <normaloff>.</normaloff>.</iconset>
+                      <iconset resource="resources.qrc">
+                       <normaloff>:/UserValidation/media/icons/eyeButtonIconpng.png</normaloff>:/UserValidation/media/icons/eyeButtonIconpng.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>42</width>
+                       <height>21</height>
+                      </size>
                      </property>
                     </widget>
                    </item>
@@ -1211,11 +1214,21 @@ font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
                      </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::ClickFocus</enum>
+                     </property>
                      <property name="text">
-                      <string>👁</string>
+                      <string/>
                      </property>
                      <property name="icon">
-                      <iconset theme="mail-forward"/>
+                      <iconset resource="resources.qrc">
+                       <normaloff>:/UserValidation/media/icons/eyeButtonIconpng.png</normaloff>:/UserValidation/media/icons/eyeButtonIconpng.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>42</width>
+                       <height>21</height>
+                      </size>
                      </property>
                     </widget>
                    </item>

@@ -8,9 +8,10 @@
 	"INCLUDE_DIR" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/QuizMania_autogen/include",
 	"INPUTS" : 
 	[
-		"/home/pyarla/dev/cpp/projects/QuizMania/media/rb_4685.png",
-		"/home/pyarla/dev/cpp/projects/QuizMania/media/rb_7853.png",
-		"/home/pyarla/dev/cpp/projects/QuizMania/media/rb_21298.png"
+		"/home/pyarla/dev/cpp/projects/QuizMania/media/illustrations/rb_4685.png",
+		"/home/pyarla/dev/cpp/projects/QuizMania/media/illustrations/rb_7853.png",
+		"/home/pyarla/dev/cpp/projects/QuizMania/media/illustrations/rb_21298.png",
+		"/home/pyarla/dev/cpp/projects/QuizMania/media/icons/eyeButtonIconpng.png"
 	],
 	"LOCK_FILE" : "/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/CMakeFiles/QuizMania_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,
