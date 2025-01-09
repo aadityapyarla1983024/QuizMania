@@ -1,5 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+#include <qsqlquery.h>
 #include <string>
 #include <QMainWindow>
 #include <SmtpMime>
@@ -61,6 +62,8 @@ private slots:
 
     void on_confirmPasswordButton_clicked();
 
+    void on_loginButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTimer* timer = nullptr;
@@ -81,7 +84,8 @@ private:
     std::string oneTimePasswordGenerator();
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     QSqlQuery register_query;
-    QSqlQuery login_query;
+    QSqlQuery login_query_username;
+    QSqlQuery login_query_email;
     QSqlQuery db_fetch_query;
     QSet<QString> existingUsernames;
     QSet<QString> existsingEmails;

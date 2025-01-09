@@ -199,7 +199,7 @@ font: 600 italic 16pt &quot;Cascadia Mono&quot;;</string>
                  <item>
                   <widget class="QPushButton" name="loginButton">
                    <property name="enabled">
-                    <bool>false</bool>
+                    <bool>true</bool>
                    </property>
                    <property name="cursor">
                     <cursorShape>PointingHandCursor</cursorShape>

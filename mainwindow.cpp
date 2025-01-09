@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <qpushbutton.h>
 #include <regex>
 #include <string>
 #include <QDebug>
@@ -30,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->emailConfirmCode, SIGNAL(textEdited(QString)), this, SLOT(on_emailConfirmCode_textEdited(QString)));
     connect(ui->passwordInput1, SIGNAL(textEdited(QString)), this, SLOT(on_passwordInput1_textEdited(QString)));
     connect(ui->passwordInput2, SIGNAL(textEdited(QString)), this, SLOT(on_passwordInput2_textEdited(QString)));
+    connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::on_loginButton_clicked);
     db.setHostName("127.0.0.1");
     db.setDatabaseName("QuizMania");
     db.setPort(33061);
@@ -44,6 +46,9 @@ MainWindow::MainWindow(QWidget *parent)
         existingUsernames.insert(db_fetch_query.value(0).toString());
         existsingEmails.insert(db_fetch_query.value(1).toString());
     }
+    login_query_username.prepare("SELECT user_password_hash FROM users WHERE user_name = :user_name");
+    
+    login_query_email.prepare("SELECT user_password_hash FROM users WHERE user_email = :user_email");
 
 }
 
@@ -471,4 +476,33 @@ QString MainWindow::hashPassword(const QString& password) {
     hash.addData(passwordBytes);
     QByteArray hashed = hash.result();
     return hashed.toHex();
+}
+
+
+void MainWindow::on_loginButton_clicked() {
+    login_query_username.bindValue(":user_name", ui->loginUsernameEmailInput->text());
+    login_query_email.bindValue(":user_email", ui->loginUsernameEmailInput->text());
+
+    bool username_valid = false;
+    bool email_valid = false;
+
+    if (login_query_username.exec()) {
+        login_query_username.next();
+        if (login_query_username.value(0).toString() == hashPassword(ui->loginPasswordInput->text())) {
+            username_valid = true;
+        }
+    }
+
+    if (login_query_email.exec()) {
+        login_query_email.next();
+        if (login_query_email.value(0).toString() == hashPassword(ui->loginPasswordInput->text())) {
+            email_valid = true;
+        }
+    }
+
+    if (username_valid || email_valid) {
+        ui->stackedWidget->setCurrentIndex(1);
+    } else {
+        ui->loginMessageLabel->setText("⛔ Your entered credentials are invalid");
+    }
 }
