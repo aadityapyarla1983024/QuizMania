@@ -1,1 +1,0 @@
-/usr/bin/g++-13 -DQT_QML_DEBUG -g CMakeFiles/demo4.dir/demo4_autogen/mocs_compilation.cpp.o CMakeFiles/demo4.dir/demo4.cpp.o -o demo4  -Wl,-rpath,/home/pyarla/dev/cpp/projects/QuizMania/build/Desktop-Debug/dependencies/SmtpClient-for-Qt/src ../../src/libSmtpMime.so.2.0 /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2 
