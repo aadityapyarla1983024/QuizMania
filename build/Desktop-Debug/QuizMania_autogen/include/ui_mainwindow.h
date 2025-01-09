@@ -933,7 +933,6 @@ public:
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
-        QObject::connect(confirmPasswordButton, &QPushButton::clicked, MainWindow, qOverload<>(&QMainWindow::close));
 
         stackedWidget->setCurrentIndex(1);
 

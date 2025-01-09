@@ -305,6 +305,7 @@
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QEventLoop
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QFlags
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QObject
+ mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QSet
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QString
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QStringList
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtCore/QTextStream
@@ -436,7 +437,9 @@
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetworkexports.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtNetwork/qtnetworkglobal.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtSql/QSqlDatabase
+ mdp:/usr/include/x86_64-linux-gnu/qt6/QtSql/QSqlQuery
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtSql/qsqldatabase.h
+ mdp:/usr/include/x86_64-linux-gnu/qt6/QtSql/qsqlquery.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtSql/qtsql-config.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtSql/qtsqlexports.h
  mdp:/usr/include/x86_64-linux-gnu/qt6/QtSql/qtsqlglobal.h

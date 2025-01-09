@@ -5,6 +5,8 @@
 #include <SmtpMime>
 #include <QTimer>
 #include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSet>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -33,7 +35,7 @@ private slots:
 
     void noEmptyFieldCheck();
 
-    void on_username_textEdited();
+    void on_username_textEdited(const QString &username);
 
     void on_nextButton_clicked();
 
@@ -57,6 +59,8 @@ private slots:
 
     void on_loginLink_clicked();
 
+    void on_confirmPasswordButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTimer* timer = nullptr;
@@ -74,6 +78,11 @@ private:
     void sendEmailConfirmation();
     void resendTimer();
     std::string oneTimePasswordGenerator();
-    QSqlDatabase db;
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    QSqlQuery register_query;
+    QSqlQuery login_query;
+    QSqlQuery db_fetch_query;
+    QSet<QString> existingUsernames;
+    QSet<QString> existsingEmails;
 };
 #endif // MAINWINDOW_H

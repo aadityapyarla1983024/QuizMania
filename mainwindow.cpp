@@ -11,6 +11,7 @@
 #include <QLineEdit>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlError>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -21,34 +22,28 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->email, SIGNAL(textEdited(QString)), this, SLOT(on_email_textEdited(QString)));
     connect(ui->firstName, SIGNAL(textEdited()), this, SLOT(on_firstName_textEdited()));
     connect(ui->lastName, SIGNAL(textEdited()), this, SLOT(on_lastName_textEdited()));
-    connect(ui->username, SIGNAL(textEdited()), this, SLOT(on_username_textEdited()));
+    connect(ui->username, SIGNAL(textEdited(QString)), this, SLOT(on_username_textEdited(QString)));
     connect(ui->nextButton, SIGNAL(clicked()), this, SLOT(on_nextButton_clicked()));
     connect(ui->changeEmailButton, SIGNAL(clicked()), this, SLOT(on_changeEmailButton_clicked()));
     connect(ui->resendButton, SIGNAL(clicked()), this, SLOT(on_resendButton_clicked()));
     connect(ui->emailConfirmCode, SIGNAL(textEdited(QString)), this, SLOT(on_emailConfirmCode_textEdited(QString)));
     connect(ui->passwordInput1, SIGNAL(textEdited(QString)), this, SLOT(on_passwordInput1_textEdited(QString)));
     connect(ui->passwordInput2, SIGNAL(textEdited(QString)), this, SLOT(on_passwordInput2_textEdited(QString)));
-    db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("127.0.0.1");
     db.setDatabaseName("QuizMania");
     db.setPort(33061);
     db.setUserName("root");
     db.setPassword("24bcs003");
-    if (db.open()) {
-        qDebug() << "Database connected successfully!";
-    } else {
-        qDebug() << "Database connection failed!";
-    }
-    QSqlQuery query;
-    if (!query.exec("SELECT * FROM Users")) {
-        qDebug() << "Query failed: ";
+    db.open();
+    register_query.prepare("INSERT INTO users (first_name, last_name, user_name, user_email, user_password_hash) "
+                           "VALUES ( :first_name, :last_name, :user_name, :user_email, :user_password_hash)");
+    db_fetch_query.exec("SELECT user_name, user_email FROM users") ? qDebug() << "Fetched database successfully" :
+        qDebug() << "Error while fetching database";
+    while (db_fetch_query.next()) {
+        existingUsernames.insert(db_fetch_query.value(0).toString());
+        existsingEmails.insert(db_fetch_query.value(1).toString());
     }
 
-    while (query.next()) {
-        QString data = query.value(1).toString();  // Assuming the first column is a string
-        qDebug() << data;
-    }
-    qDebug() << QSqlDatabase::drivers();
 }
 
 MainWindow::~MainWindow()
@@ -84,8 +79,14 @@ void MainWindow::on_resendTimerFinished_emmited() {
 void MainWindow::on_email_textEdited(const QString &email)
 {
     if (isEmailValid(email.toStdString())) {
-        ui->emailLabel->setText("✅ You have entered a valid email.");
-        m_emailValid = true;
+        if(existsingEmails.contains(email)) {
+            ui->emailLabel->setText("⛔️ Your email already exists, please login to continue");
+            m_emailValid = false;
+        } else {
+            ui->emailLabel->setText("✅ You have entered a valid email.");
+            m_emailValid = true;
+        }
+
 
     } else {
         ui->emailLabel->setText("⛔️ Please enter a valid email.");
@@ -120,9 +121,9 @@ void MainWindow::on_lastName_textEdited()
 }
 
 
-void MainWindow::on_username_textEdited() {
-    if (ui->username->text().isEmpty()) {
-        ui->usernameLabel->setText("⛔️ You have entered a invalid username.");
+void MainWindow::on_username_textEdited(const QString &username) {
+    if (existingUsernames.contains(username)) {
+        ui->usernameLabel->setText("⛔️ Your username is already taken");
         m_userName = false;
 
     } else {
@@ -354,7 +355,7 @@ void MainWindow::strongPasswordValidator(std::string& input)
     // Checking lower alphabet in string
     // bool hasLower = false, hasUpper = false, hasDigit = false, specialChar = false;
     std::string normalChars = "abcdefghijklmnopqrstu"
-                         "vwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ";
+                              "vwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ";
 
     for (int i = 0; i < n; i++) {
         if (islower(input[i]))
@@ -440,9 +441,24 @@ void MainWindow::on_registerLink_clicked()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-
 void MainWindow::on_loginLink_clicked()
 {
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_confirmPasswordButton_clicked()
+{
+    register_query.bindValue(":first_name", ui->firstName->text());
+    register_query.bindValue(":last_name", ui->lastName->text());
+    register_query.bindValue(":user_name", ui->username->text());
+    register_query.bindValue(":user_email", ui->email->text());
+    register_query.bindValue(":user_password_hash", ui->passwordInput1->text());
+    if (!register_query.exec()) {
+        QSqlError error = register_query.lastError();
+        qDebug() << error.text();
+    } else {
+        qDebug() << "Registered Successfully";
+    }
     ui->stackedWidget->setCurrentIndex(0);
 }
 
