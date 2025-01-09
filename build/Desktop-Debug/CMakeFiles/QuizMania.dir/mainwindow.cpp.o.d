@@ -482,4 +482,6 @@ CMakeFiles/QuizMania.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
  /usr/include/x86_64-linux-gnu/qt6/QtSql/QSqlError \
- /usr/include/x86_64-linux-gnu/qt6/QtSql/qsqlerror.h
+ /usr/include/x86_64-linux-gnu/qt6/QtSql/qsqlerror.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QCryptographicHash \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcryptographichash.h

@@ -12,11 +12,12 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
+#include<QCryptographicHash>
+#include <QByteArray>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);
+{    ui->setupUi(this);
     connect(this, SIGNAL(noEmptyField()), this, SLOT(noEmptyFieldCheck()));
     connect(this, SIGNAL(resendTimerFinished()), this, SLOT(on_resendTimerFinished_emmited()));
     connect(ui->email, SIGNAL(textEdited(QString)), this, SLOT(on_email_textEdited(QString)));
@@ -452,7 +453,8 @@ void MainWindow::on_confirmPasswordButton_clicked()
     register_query.bindValue(":last_name", ui->lastName->text());
     register_query.bindValue(":user_name", ui->username->text());
     register_query.bindValue(":user_email", ui->email->text());
-    register_query.bindValue(":user_password_hash", ui->passwordInput1->text());
+
+    register_query.bindValue(":user_password_hash", hashPassword(ui->passwordInput1->text()));
     if (!register_query.exec()) {
         QSqlError error = register_query.lastError();
         qDebug() << error.text();
@@ -462,3 +464,11 @@ void MainWindow::on_confirmPasswordButton_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+
+QString MainWindow::hashPassword(const QString& password) {
+    QByteArray passwordBytes = password.toUtf8();
+    QCryptographicHash hash(QCryptographicHash::Sha256);
+    hash.addData(passwordBytes);
+    QByteArray hashed = hash.result();
+    return hashed.toHex();
+}

@@ -72,6 +72,7 @@ private:
     void resendTimerStop();
     bool m_emailValid = false;
     bool m_firstName = false;
+    QString hashPassword(const QString& password);
     bool m_lastName = false;
     bool m_userName = false;
     std::string otp;
