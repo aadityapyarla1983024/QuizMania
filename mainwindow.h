@@ -22,6 +22,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void db_connect();
+    void db_init_queries();
 
 signals:
     void noEmptyField(void);

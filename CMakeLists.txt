@@ -21,6 +21,9 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        email.cpp
+        database.cpp
+        uievents.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

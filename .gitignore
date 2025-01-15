@@ -1,2 +1,5 @@
 build/
 .cache/
+CMakeLists.txt.user
+credentials.h
+mainwindow.ui.autosave
