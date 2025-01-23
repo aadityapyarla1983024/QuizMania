@@ -224,6 +224,8 @@ void MainWindow::on_confirmPasswordButton_clicked()
     } else {
         qDebug() << "Registered Successfully";
     }
+    db_fetch_query.exec("SELECT user_name, user_email FROM users") ? qDebug() << "Fetched database successfully" :
+        qDebug() << "Error while fetching database";
     ui->stackedWidget->setCurrentIndex(0);
 }
 
